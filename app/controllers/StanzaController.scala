@@ -11,7 +11,6 @@ import play.Environment
 @Singleton
 class StanzaController @Inject()(cc: ControllerComponents, environment: Environment) extends AbstractController(cc) {
 
-
   def get(processId: String, stanzaId: String) = Action { implicit request: Request[AnyContent] => {
 
     val targetFile = environment.getFile("/conf/assets/" + processId + ".js")
@@ -23,10 +22,7 @@ class StanzaController @Inject()(cc: ControllerComponents, environment: Environm
 
     } else {
       NotFound("Process " + processId + " not found")
-
     }
-
-
   }
   }
 }
