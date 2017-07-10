@@ -10,8 +10,8 @@ import play.api.mvc._
 import play.Environment
 
 
-case class Stanza(`type`: String, text: Option[Int], next: Option[Seq[String]])
-case class Phrase(text: String)
+case class Stanza(`type`: String, text: Option[Int], answers: Option[Seq[Int]], next: Option[Seq[String]])
+case class Phrase(text: Seq[String])
 case class Process(flow: Map[String, Stanza], phrases: Seq[Phrase])
 
 @Singleton
@@ -20,10 +20,11 @@ class StanzaController @Inject()(cc: ControllerComponents, environment: Environm
   implicit val stanzaReader = Json.format[Stanza]
 
   implicit val phraseReader: Reads[Phrase] = (
-    ( JsPath.read[String] orElse
-    JsPath.read[Seq[String]].map[String](q => q(0))
+    ( JsPath.read[Seq[String]] orElse
+      JsPath.read[String].map[Seq[String]](q => q :: Nil)
       ).map[Phrase](x => Phrase(x))
-  )
+    )
+
 
   implicit val processReader = Json.reads[Process]
 
@@ -35,9 +36,19 @@ class StanzaController @Inject()(cc: ControllerComponents, environment: Environm
       val process = Json.parse(new FileInputStream(targetFile)).as[Process]
       val stanza = process.flow(stanzaId)
 
-      if (stanza.text.isDefined)
-        Ok(process.phrases(stanza.text.get).text)
-      else
+      if (stanza.text.isDefined) {
+        var result: JsObject = Json.obj(
+          "type" -> stanza.`type`,
+          "text" -> process.phrases(stanza.text.get).text(0),
+          "next" -> stanza.next
+        )
+
+        if (stanza.answers.isDefined) {
+          result = result + ("answers" -> Json.arr(stanza.answers.get.map(i => process.phrases(i).text(0))))
+        }
+
+        Ok(Json.prettyPrint(result).toString).as("application/json")
+      } else
         NotFound("Can't find text for " + processId + "." + stanzaId)
 
     } else {
