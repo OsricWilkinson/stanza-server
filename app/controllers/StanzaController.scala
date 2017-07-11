@@ -13,31 +13,47 @@ import play.Environment
 @Singleton
 class StanzaController @Inject()(cc: ControllerComponents, environment: Environment) extends AbstractController(cc) {
 
+  def getPhrase(processId: String, ids: String) = Action {
+    request: Request[AnyContent] => {
+      val targetFile = environment.getFile("/conf/assets/" + processId + ".js")
 
-  def get(processId: String, stanzaId: String) = Action { implicit request: Request[AnyContent] => {
+      if (targetFile.exists()) {
 
-    val targetFile = environment.getFile("/conf/assets/" + processId + ".js")
+        val process: JsValue = Json.parse(new FileInputStream(targetFile))
 
-    if (targetFile.exists()) {
-      val process: JsValue = Json.parse(new FileInputStream(targetFile))
+        def lookupPhrase(idx: Int): JsValue = {
+          (process \ "phrases") (idx).as[JsValue]
+        }
 
-      def lookupPhrase(idx: Int): JsValue = {
-        (process \ "phrases") (idx).as[JsValue]
+        val result = ids.split(",")
+          .map(x => Integer.parseInt(x, 10))
+          .map(x => lookupPhrase(x))
+
+        Ok(JsArray(result)).as("application/json")
+
+      } else {
+        NotFound("Process " + processId + " not found")
       }
-
-      val transform = (__ \ "flow" \ stanzaId).json.pick(
-        (__ \ "text").json.update(
-          of[JsNumber].map(o => lookupPhrase(o.as[Int]))
-        )
-      )
-
-      val result = process.transform(transform)
-
-      Ok(result.get).as("application/json")
-
-    } else {
-      NotFound("Process " + processId + " not found")
     }
   }
+
+  def getStanza(processId: String, stanzaId: String) = Action {
+    request: Request[AnyContent] => {
+
+      val targetFile = environment.getFile("/conf/assets/" + processId + ".js")
+
+      if (targetFile.exists()) {
+        val process: JsValue = Json.parse(new FileInputStream(targetFile))
+
+        val transform = (__ \ "flow" \ stanzaId).json.pick
+
+        val result = process.transform(transform)
+
+        Ok(result.get).as("application/json")
+
+      } else {
+        NotFound("Process " + processId + " not found")
+      }
+    }
   }
 }

@@ -20,7 +20,7 @@ class StanzaControllerSpec extends PlaySpec with GuiceOneAppPerTest with Injecti
 
     "return a json blob for the start stanza" in {
       val controller = new StanzaController(stubControllerComponents(), Environment.simple())
-      val stanza = controller.get("oct90001", "start").apply(FakeRequest(GET, "/"))
+      val stanza = controller.getStanza("oct90001", "start").apply(FakeRequest(GET, "/"))
 
       status(stanza) mustBe OK
       contentType(stanza) mustBe Some("application/json")
@@ -29,7 +29,7 @@ class StanzaControllerSpec extends PlaySpec with GuiceOneAppPerTest with Injecti
 
     "render the index page from the application" in {
       val controller = inject[StanzaController]
-      val home = controller.get("oct9001", "start").apply(FakeRequest(GET, "/process/fake"))
+      val home = controller.getStanza("oct9001", "start").apply(FakeRequest(GET, "/process/fake"))
 
       status(home) mustBe NOT_FOUND
 

@@ -6,7 +6,12 @@
 # An example controller showing a sample home page
 GET     /                           controllers.HomeController.index
 
-GET     /process/:proc/:stanza      controllers.StanzaController.get(proc, stanza)
+GET     /websockets.html            controllers.HomeController.websocket
+
+GET     /stanza/:proc/:stanza      controllers.StanzaController.getStanza(proc, stanza)
+GET     /phrases/:proc           controllers.StanzaController.getPhrase(proc, ids)
+
+GET     /stream         controllers.WebsocketController.socket
 
 # Map static resources from the /public folder to the /assets URL path
 GET     /assets/*file               controllers.Assets.versioned(path="/public", file: Asset)
