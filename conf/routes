@@ -8,8 +8,10 @@ GET     /                           controllers.HomeController.index
 
 GET     /websockets.html            controllers.HomeController.websocket
 
-GET     /stanza/:proc/:stanza      controllers.StanzaController.getStanza(proc, stanza)
-GET     /phrases/:proc           controllers.StanzaController.getPhrase(proc, ids)
+GET     /process/:proc                  controllers.ProcessController.getProcess(proc)
+GET     /process/:proc/stanza/:stanza   controllers.StanzaController.getStanza(proc, stanza)
+GET     /process/:proc/phrases          controllers.StanzaController.getPhrase(proc, ids)
+
 
 GET     /stream         controllers.WebsocketController.socket
 
