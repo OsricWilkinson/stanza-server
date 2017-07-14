@@ -1,6 +1,7 @@
 package controllers
 
 import java.io.FileInputStream
+import java.lang.IllegalArgumentException
 import javax.inject._
 
 import play.api.libs.json._
@@ -20,19 +21,26 @@ class StanzaController @Inject()(cc: ControllerComponents, environment: Environm
       if (targetFile.exists()) {
 
         val process: JsValue = Json.parse(new FileInputStream(targetFile))
+        val phraseSeq = (process \ "phrases").as[JsArray].value
 
         def lookupPhrase(idx: Int): JsValue = {
-          (process \ "phrases") (idx).as[JsValue]
+          if (idx < 0 || idx >= phraseSeq.length) {
+            throw new IllegalArgumentException("Phrase id " + idx + " out of range:" + phraseSeq.length)
+          }
+          phraseSeq(idx)
         }
 
-        val result = ids.split(",")
-          .map(x => Integer.parseInt(x, 10))
-          .map(x => lookupPhrase(x))
-
-        Ok(JsArray(result)).as("application/json")
+        try {
+          val result = ids.split(",")
+            .map(x => Integer.parseInt(x, 10))
+            .map(x => lookupPhrase(x))
+          Ok(JsArray(result)).as("application/json")
+        } catch {
+          case ex: IllegalArgumentException => NotFound(Json.obj("error" -> ex.getMessage)).as("application/json")
+        }
 
       } else {
-        NotFound("Process " + processId + " not found")
+        NotFound(Json.obj("error" -> "Process not found")).as("application/json")
       }
     }
   }
@@ -49,10 +57,13 @@ class StanzaController @Inject()(cc: ControllerComponents, environment: Environm
 
         val result = process.transform(transform)
 
-        Ok(result.get).as("application/json")
-
+        if (result.isSuccess) {
+          Ok(result.get).as("application/json")
+        } else {
+          NotFound(Json.obj("error" -> "Stanza not found")).as("application/json")
+        }
       } else {
-        NotFound("Process " + processId + " not found")
+        NotFound(Json.obj("error" -> "Process not found")).as("application/json")
       }
     }
   }

@@ -21,7 +21,7 @@ class ProcessController @Inject()(cc: ControllerComponents, environment: Environ
 
       Ok(Json.toJson(process)).as("application/json")
     } else {
-      NotFound("Process " + processId + " not found")
+      NotFound(Json.obj("error" -> "Process not found")).as("application/json")
     }
   }
 }
