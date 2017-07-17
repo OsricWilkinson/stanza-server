@@ -91,9 +91,12 @@ $(function () {
 				return;
 			} else if (stanza.hasWebchat()) {
 				currentResponse.appendChild(buildElement("div", "instruction", stanza.getWebchat()));
-				currentStanza = stanza.data.next[0];
-				setTimeout(showNextStanza, 500);
+
+			} else {
+			    currentResponse.appendChild(buildElement("div", "instruction", stanza.getText()));
 			}
+			currentStanza = stanza.data.next[0];
+            setTimeout(showNextStanza, 500);
 		} else {
 			
 			currentResponse.appendChild(buildElement("div", "question", stanza.getWebchat()));
