@@ -4,21 +4,37 @@ $(function () {
 	var knownWords = {
 		tea: {message: "I can help you make a cup of tea", process:"oct90001"}
 	};
-	
-	var currentStanza = 'start';
 
-	function setCurrentProcess(process) {
-	    processStack = process;
-	    phrasebook = process.phrases;
-	}
+	var currentProcess;
 
-	function loadProcess(id) {
-		$("#input").prop("disabled", true);
-		$.getJSON("/process/" + id)
-		.done(function (json) {
-			setCurrentProcess(json);	
-			showNextStanza();			
-		});
+	function getNextStanza( stanzaId) {
+	    $.getJSON(["process", currentProcess, "stanza", stanzaId].join("/"))
+	        .done(function (stanza) {
+	            var phrases = [];
+
+	            if ("text" in stanza) {
+	                phrases.push(stanza.text);
+	            }
+
+	            if ("answers" in stanza) {
+	                phrases = phrases.concat(stanza.answers);
+	            }
+
+	            if (phrases.length > 0) {
+	                $.getJSON(["process", currentProcess, "phrases"].join("/"), {ids: phrases.join(",")})
+	                    .done(function (phraseList) {
+	                        var i;
+
+	                        for (i = 0; i < phrases.length; i += 1) {
+	                            phrasebook[phrases[i]] = phraseList[i];
+	                        }
+
+	                        showNextStanza(buildStanza(stanzaId, stanza));
+	                    });
+	            } else {
+	                showNextStanza(buildStanza(stanzaId, stanza));
+	            }
+	        });
 	}
 		
 	function matchInput(text) {			
@@ -66,17 +82,15 @@ $(function () {
 
 	function answerClick() {
 		pre_answer($(this).text());
-				
-		currentStanza = this.dataset.next;		
 		$("#input").focus();
 		
-		showNextStanza();
+		getNextStanza(this.dataset.next)
 	}
 	
 	var currentResponse;
 
-	function showNextStanza() {
-		var stanza = getStanza(currentStanza);
+	function showNextStanza(stanza) {
+
 		var i, answer, answerBlock;
 		
 		if (currentResponse === undefined) {
@@ -95,8 +109,8 @@ $(function () {
 			} else {
 			    currentResponse.appendChild(buildElement("div", "instruction", stanza.getText()));
 			}
-			currentStanza = stanza.data.next[0];
-            setTimeout(showNextStanza, 500);
+
+            getNextStanza(stanza.data.next[0]);
 		} else {
 			
 			currentResponse.appendChild(buildElement("div", "question", stanza.getWebchat()));
@@ -185,7 +199,10 @@ $(function () {
 		for (keyword in knownWords) {
 			if (text.match(keyword)) {
 				addResponse(knownWords[keyword].message, "bot");
-				loadProcess(knownWords[keyword].process);
+
+				currentProcess = knownWords[keyword].process;
+
+				getNextStanza( "start");
 				return;			
 			}
 		}
