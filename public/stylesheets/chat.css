@@ -1,0 +1,104 @@
+
+body, html  {
+	height: 98%;
+	overflow: hidden;
+}
+
+body {
+	background-color: #eee;
+	color: #000;
+	font-family: Arial, sans-serif;
+}
+
+
+#outer {
+	height: 100%;
+	display: flex;	
+	flex-flow: column nowrap;
+	justify-content: space-between;
+}
+
+#title {
+	flex: 0 1 auto;
+	width: 100%;
+	display: flex;
+	flex-flow: row nowrap;
+	justify-content: space-between;
+}
+
+#input-holder {
+	flex: 0 0 auto;
+	width: 98%;
+}
+
+#input {
+	margin: 4px;
+	width: 98%;
+}
+
+#history {	
+	flex: 1 1 auto;
+	padding: 0.4rem;
+	margin: 0.4rem;
+	margin-bottom: 1rem;
+	margin-right: 1rem;
+	position: relative;
+	border: thin solid black;
+	background-color: white;
+
+}
+
+#responses {
+	display: flex;
+	flex-flow: column nowrap;
+	justify-content: flex-start;
+	width: 98%;
+
+	position: absolute;
+	bottom: 0px;
+	max-height: 98%;
+	overflow-y: scroll;
+}
+
+.response {
+	display: flex;
+	flex-flow: row nowrap;
+	flex: 1 0 auto;
+	justify-content: space-between;	
+	max-width: 85%;
+	background: #8f8;
+	padding: 10px;
+	margin: 15px;
+	border-radius: 10px;
+	box-shadow: 5px 5px 5px 0px rgba(0,0,0,0.75);
+}
+
+.response.bot {
+	align-self: flex-end;
+	border-bottom-right-radius: 0;
+}
+
+.response.user {
+	align-self: flex-start;
+	border-bottom-left-radius: 0;
+}
+
+.response .text {
+	margin-right: 4px;
+}
+
+.response .icon {
+	flex: 0 0 auto;
+    align-self: center;
+}
+
+div.answer-holder .answer {
+	cursor: pointer;
+	text-decoration: underline;
+	color: blue;
+}
+
+div.answer-holder .answer:hover {
+	color: #31b0d5;
+	text-decoration: underline;
+}

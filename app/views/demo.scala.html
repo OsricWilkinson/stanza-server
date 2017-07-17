@@ -1,0 +1,54 @@
+@()
+
+<!DOCTYPE html>
+<html>
+	<!-- Hello, David!		
+		
+		You should notice that you're in a 'chat-demo' directory.
+		
+		NOTHING OUTSIDE OF CHAT DEMO SHOULD BE EDITED AS A RESULT OF THIS PROJECT
+		
+		(Unless, you know, you've found a bug or something)
+		
+	-->
+
+	<head>
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">		
+		<title>Project Ocelot - Chat Example</title>
+		<!-- <link rel="stylesheet" type="text/css" href="/system/bootstrap4/font-awesome-4.7.0/css/font-awesome.min.css" > -->
+		<link rel="stylesheet" type="text/css" href="@routes.Assets.versioned("stylesheets/chat.css")" >
+	</head>
+
+	<body>
+		<div id="outer">
+			<div id="title">
+				<div>
+					<h1>Chat with HMRC</h1>
+				</div>
+				<div>
+					<button class="cmd-restart">Restart Demo</button>
+				</div>
+			</div>
+			<div id="history">
+				<div id="responses">
+					<div class="response bot">
+						<div class="text">Hello, welcome to HMRC chat!</div>
+						<div class="icon"><i class="fa fa-cogs"></i></div>
+					</div>
+				</div>
+			</div>						
+			<div id="input-holder">
+				<textarea rows="5" id="input" autofocus></textarea>
+			</div>											
+		</div>
+		
+		<script src="@routes.Assets.versioned("javascripts/jquery-3.2.1.min.js")"></script>
+		<script src="@routes.Assets.versioned("javascripts/common.js")"></script>
+        <script src="@routes.Assets.versioned("javascripts/functions.js")"></script>
+        <script src="@routes.Assets.versioned("javascripts/types.js")"></script>
+        <script src="@routes.Assets.versioned("javascripts/chat.js")"></script>
+
+	</body>
+</html>

@@ -5,7 +5,7 @@
 
 # An example controller showing a sample home page
 GET     /                           controllers.HomeController.index
-
+GET     /demo.html                  controllers.HomeController.chat
 GET     /websockets.html            controllers.HomeController.websocket
 
 GET     /process/:proc                  controllers.ProcessController.getProcess(proc)
