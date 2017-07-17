@@ -211,7 +211,8 @@ $(function () {
 	}
 
 	function handleKeys(e) {
-		if (e.originalEvent.code === "Enter") {
+
+		if (e.which === 13) {
 			handleUserInput();
 		}
 	}
