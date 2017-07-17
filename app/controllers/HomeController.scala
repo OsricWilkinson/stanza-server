@@ -17,7 +17,7 @@ class HomeController @Inject()(cc: ControllerComponents) extends AbstractControl
   }
 
   def chat = Action {
-    Ok(views.html.chat())
+    Ok(views.html.demo())
   }
 
   def websocket() = Action { request: Request[AnyContent] => Ok(views.html.websocket())}
