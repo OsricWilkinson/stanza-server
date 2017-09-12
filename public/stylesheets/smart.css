@@ -1,48 +1,81 @@
-
 * {
-    box-sizing: border-box;
-}
+  box-sizing: border-box; }
 
 body {
-    font-family: "Century Gothic", CenturyGothic, AppleGothic, sans-serif;
-}
+  font-family: "Century Gothic", CenturyGothic, AppleGothic, sans-serif; }
 
 .container {
-    margin: 4em;
-    display: flex;
-    flex-flow: column nowrap;
-}
+  margin: 4em;
+  display: flex;
+  flex-flow: column nowrap; }
 
 #alert:empty {
-    display: none;
-}
+  display: none; }
 
 #alert {
-    border-radius: 8px;
-    padding: 8px;
-
-}
+  border-radius: 8px;
+  padding: 8px; }
 
 #holder {
-    margin-bottom: 3em;
-}
+  margin-bottom: 3em; }
 
 #previous-holder {
-    display: block;
-}
+  display: block; }
 
 #previous {
-    display: flex;
-    flex-flow: column nowrap;
-}
+  display: flex;
+  flex-flow: column nowrap; }
 
 #previous .row {
-    display: flex;
-    flex-flow: row nowrap;
-    justify-content: space-between;
-}
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between; }
 
 #previous .row > * {
-    margin-left: 1em;
-    margin-right: 1em;
-}
+  margin-left: 1em;
+  margin-right: 1em; }
+
+/*  Toolkit stuff */
+.phrase-banner {
+  padding: 10px 0 8px;
+  border-bottom: 1px solid #bfc1c3; }
+  @media (min-width: 641px) {
+    .phrase-banner {
+      padding-bottom: 10px; } }
+  .phrase-banner p {
+    display: table;
+    margin: 0;
+    color: #000;
+    font-family: "nta", Arial, sans-serif;
+    font-weight: 400;
+    text-transform: none;
+    font-size: 14px;
+    line-height: 1.1428571429; }
+    @media (min-width: 641px) {
+      .phrase-banner p {
+        font-size: 16px;
+        line-height: 1.25; } }
+  .phrase-banner .phase-tag {
+    display: -moz-inline-stack;
+    display: inline-block;
+    margin: 0 8px 0 0;
+    padding: 2px 5px 0;
+    font-family: "nta", Arial, sans-serif;
+    font-weight: 700;
+    text-transform: none;
+    font-size: 14px;
+    line-height: 1.1428571429;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    text-decoration: none;
+    color: #fff;
+    background-color: #005ea5; }
+    @media (min-width: 641px) {
+      .phrase-banner .phase-tag {
+        font-size: 16px;
+        line-height: 1.25; } }
+  .phrase-banner span {
+    display: table-cell;
+    vertical-align: baseline; }
+
+/*# sourceMappingURL=smart.css.map */
