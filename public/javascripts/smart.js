@@ -52,13 +52,20 @@ $(function () {
   function answerClick () {
     $(this).off()
 
-    var changeLink = buildElement('a', 'change-answer', 'Change')
-    changeLink.dataset.id = this.dataset.id
+    $("#previous-holder").removeClass("js-hidden")
+    this.classList.remove("click-target")
 
+    var changeLink = buildElement('a', 'col change-answer click-target', 'Change')
+    changeLink.dataset.id = this.dataset.id
     $(changeLink).on('click', change)
 
+    var question = currentResponse.querySelector('.question')
+    question.classList.add("col")
+
+    this.classList.add("col")
+
     $('#previous').prepend(buildElement('div', 'row',
-      currentResponse.querySelector('.question'),
+      question,
       this,
       changeLink
     ))
@@ -100,7 +107,7 @@ $(function () {
       answerBlock = buildElement('div', 'answer-block')
 
       for (i = 0; i < stanza.data.answers.length; i += 1) {
-        answer = buildElement('a', 'answer', getPhrase(stanza.data.answers[i]))
+        answer = buildElement('a', 'answer click-target', getPhrase(stanza.data.answers[i]))
 
         answer.dataset.next = stanza.data.next[i]
         answer.dataset.id = stanza.data.id
@@ -116,6 +123,7 @@ $(function () {
 
   function reset () {
     $('#holder').empty()
+    $('#previous-holder').addClass("js-hidden")
     $('#previous').empty()
     $('#alert').empty()
     currentResponse = undefined

@@ -1,3 +1,5 @@
+@import '../govuk-toolkit/stylesheets/_grid_layout.scss';
+@import '../govuk-toolkit/stylesheets/_colours.scss';
 @import '../govuk-toolkit/stylesheets/design-patterns/_alpha-beta.scss';
 
 * {
@@ -28,6 +30,12 @@ body {
     margin-bottom: 3em;
 }
 
+#previous-instructions {
+  display: flex;
+  flew-flow: row nowrap;
+  justify-content: space-between;
+}
+
 #previous-holder {
     display: block;
 }
@@ -48,6 +56,19 @@ body {
     margin-right: 1em;
 }
 
+.click-target {
+  text-decoration: underline;
+  color: $link-colour;
+  cursor: pointer;
+}
+
+.instruction, .question {
+  margin-bottom: 1em;
+}
+
+.col {
+  width: 33%;
+}
 
 /*  Toolkit stuff */
 
