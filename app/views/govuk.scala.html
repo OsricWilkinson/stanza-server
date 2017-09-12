@@ -1,4 +1,4 @@
-@(header: Html)(content: Html)(scripts:Html)
+@(header: Html)(content: Html)(scripts: Html)
 
 
 <!DOCTYPE html>
@@ -6,7 +6,7 @@
 <!--[if gt IE 8]><!--> <html lang="en"><!--<![endif]-->
     <head>
         <meta charset="utf-8" />
-        <title>GOV.UK - The best place to find government services and information</title>
+        <title>GOV.UK - Ocelot Proof Of Concept Demo</title>
 
             <!--[if gt IE 8]><!--><link href="/assets/stylesheets/govuk-template.css" media="screen" rel="stylesheet" /><!--<![endif]-->
         <!--[if IE 6]><link href="/assets/stylesheets/govuk-template-ie6.css" media="screen" rel="stylesheet" /><![endif]-->
@@ -34,10 +34,10 @@
         <meta property="og:image" content="/assets/images/opengraph-image.png">
 
 
-    </head>
+        </head>
 
     <body>
-        <script>document.body.className = ((document.body.className) ? document.body.className + ' js-enabled' : 'js-enabled');</script>
+        <script>document.body.className = ((document.body.className) ? document.body.className + ' js-enabled' : 'js-enabled')</script>
 
 
         <div id="skiplink-container">
@@ -69,14 +69,18 @@
         </header>
 
         <div id="global-header-bar"></div>
-        <div class="phrase-banner">
-            <p>
-                <strong class="phase-tag">ALPHA</strong>
-                <span>This is a new service.</span>
-            </p>
-        </div>
 
-        @content
+        <div class="container">
+            <div class="phrase-banner">
+                <p>
+                    <strong class="phase-tag">ALPHA</strong>
+                    <span>This is a new service.</span>
+                </p>
+            </div>
+
+            @content
+
+        </div>
 
         <footer class="group js-footer" id="footer" role="contentinfo">
 

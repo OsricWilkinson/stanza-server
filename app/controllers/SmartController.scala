@@ -20,7 +20,7 @@ class SmartController @Inject()(cc: ControllerComponents, environment: Environme
 
   private def getProcess(id: String): Option[JsValue] = {
 
-    val targetFile = environment.getFile("/conf/assets/" + id + ".js")
+    val targetFile = environment.getFile("/conf/assets/" + id + ".json")
 
     if (targetFile.exists()) {
 

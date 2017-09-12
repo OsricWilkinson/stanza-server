@@ -11,9 +11,7 @@ body {
 }
 
 .container {
-    margin: 4em;
-    display: flex;
-    flex-flow: column nowrap;
+  @extend %site-width-container;
 }
 
 #alert:empty {

@@ -16,7 +16,7 @@ class StanzaController @Inject()(cc: ControllerComponents, environment: Environm
 
   def getPhrase(processId: String, ids: String) = Action {
     request: Request[AnyContent] => {
-      val targetFile = environment.getFile("/conf/assets/" + processId + ".js")
+      val targetFile = environment.getFile("/conf/assets/" + processId + ".json")
 
       if (targetFile.exists()) {
 
@@ -48,7 +48,7 @@ class StanzaController @Inject()(cc: ControllerComponents, environment: Environm
   def getStanza(processId: String, stanzaId: String) = Action {
     request: Request[AnyContent] => {
 
-      val targetFile = environment.getFile("/conf/assets/" + processId + ".js")
+      val targetFile = environment.getFile("/conf/assets/" + processId + ".json")
 
       if (targetFile.exists()) {
         val process: JsValue = Json.parse(new FileInputStream(targetFile))
@@ -67,4 +67,24 @@ class StanzaController @Inject()(cc: ControllerComponents, environment: Environm
       }
     }
   }
+
+  def getLink(processId: String, idx: Int) = Action {
+    getProcess(processId) match {
+      case None => NotFound(Json.obj("error" -> "Process not found")).as("application/json")
+      case Some(process) => Ok((process \ "meta" \ "links" \ idx).getOrElse(Json.parse("")))
+    }
+  }
+
+  private def getProcess(id: String): Option[JsValue] = {
+
+    val targetFile = environment.getFile("/conf/assets/" + id + ".json")
+
+    if (targetFile.exists()) {
+
+      Some(Json.parse(new FileInputStream(targetFile)))
+    } else {
+      None
+    }
+  }
+
 }

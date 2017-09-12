@@ -12,6 +12,7 @@ GET        /websockets.html                     controllers.HomeController.webso
 GET        /process/:proc                       controllers.ProcessController.getProcess(proc)
 GET        /process/:proc/stanza/:stanza        controllers.StanzaController.getStanza(proc, stanza)
 GET        /process/:proc/phrases               controllers.StanzaController.getPhrase(proc, ids)
+GET        /process/:proc/link/:idx             controllers.StanzaController.getLink(proc, idx : Int)
 
 GET        /smart/:proc                  controllers.SmartController.getResult(proc)
 
