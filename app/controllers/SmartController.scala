@@ -9,11 +9,11 @@ import play.api.mvc._
 
 class SmartController @Inject()(cc: ControllerComponents, environment: Environment) extends AbstractController(cc) {
 
-  def getResult(processId: String, rawPath: String) = Action {
+  def getResult(processId: String) = Action {
     getProcess(processId) match {
    //   case Some(process) => Ok(views.html.smart(Json.stringify(process)))
       case Some(process) => Ok(views.html.smart())
-      case None => NotFound(Json.obj("error" -> "Process not found")).as("application/json")
+      case None => NotFound( "Process not found")
     }
   }
 

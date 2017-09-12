@@ -13,7 +13,7 @@ GET        /process/:proc                       controllers.ProcessController.ge
 GET        /process/:proc/stanza/:stanza        controllers.StanzaController.getStanza(proc, stanza)
 GET        /process/:proc/phrases               controllers.StanzaController.getPhrase(proc, ids)
 
-GET        /smart/:proc/*path                   controllers.SmartController.getResult(proc, path)
+GET        /smart/:proc                  controllers.SmartController.getResult(proc)
 
 GET        /stream                              controllers.WebsocketController.socket
 
