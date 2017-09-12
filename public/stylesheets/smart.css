@@ -1,0 +1,48 @@
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Century Gothic", CenturyGothic, AppleGothic, sans-serif;
+}
+
+.container {
+    margin: 4em;
+    display: flex;
+    flex-flow: column nowrap;
+}
+
+#alert:empty {
+    display: none;
+}
+
+#alert {
+    border-radius: 8px;
+    padding: 8px;
+
+}
+
+#holder {
+    margin-bottom: 3em;
+}
+
+#previous-holder {
+    display: block;
+}
+
+#previous {
+    display: flex;
+    flex-flow: column nowrap;
+}
+
+#previous .row {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+}
+
+#previous .row > * {
+    margin-left: 1em;
+    margin-right: 1em;
+}

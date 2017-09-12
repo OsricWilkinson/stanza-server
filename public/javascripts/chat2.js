@@ -40,12 +40,27 @@ $(function () {
             });
     }
 
+    function change() {
+        $(this).closest(".row").before().remove();
+
+        $("#holder").empty();
+        currentResponse = undefined;
+
+        getNextStanza(this.dataset.id);
+    }
+
     function answerClick() {
         $(this).off();
 
+        var changeLink = buildElement("a", "change-answer", "Change");
+        changeLink.dataset.id = this.dataset.id;
+
+        $(changeLink).on("click", change);
+
         $("#previous").prepend(buildElement("div", "row",
             currentResponse.querySelector(".question"),
-            this
+            this,
+            changeLink
         ));
 
         $("#holder").empty();
@@ -89,6 +104,8 @@ $(function () {
                 answer = buildElement("a", "answer", getPhrase(stanza.data.answers[i]));
 
                 answer.dataset.next = stanza.data.next[i];
+                answer.dataset.id = stanza.data.id;
+
                 $(answer).on("click", answerClick);
 
                 answerBlock.appendChild(buildElement("div", "answer-holder", answer));
@@ -98,8 +115,18 @@ $(function () {
         }
     }
 
+    function reset() {
+        $("#holder").empty();
+        $("#previous").empty();
+        $("#alert").empty();
+        currentResponse = undefined;
 
-    getNextStanza("start");
+        getNextStanza("start");
+    }
+
+    $("#restart").on("click", reset);
+
+    reset();
 
 });
 
