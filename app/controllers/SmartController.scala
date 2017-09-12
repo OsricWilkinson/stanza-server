@@ -11,7 +11,8 @@ class SmartController @Inject()(cc: ControllerComponents, environment: Environme
 
   def getResult(processId: String, rawPath: String) = Action {
     getProcess(processId) match {
-      case Some(process) => Ok(views.html.smart(Json.stringify(process)))
+   //   case Some(process) => Ok(views.html.smart(Json.stringify(process)))
+      case Some(process) => Ok(views.html.smart())
       case None => NotFound(Json.obj("error" -> "Process not found")).as("application/json")
     }
   }
