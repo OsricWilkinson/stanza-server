@@ -184,10 +184,12 @@ $(function () {
 
   function change () {
     var $this = $(this)
-    var $before = $this.closest('.row').before()
+    var $row = $this.closest('.row')
+    var next = this.dataset.target
 
-    var count = $before.length
-    $before.remove()
+    var count = $row.index() + 1
+    $row.prevAll().remove()
+    $row.remove()
 
     answers.splice(-count, count)
     updateUrl()
@@ -199,7 +201,8 @@ $(function () {
     $('#holder').empty()
     currentResponse = undefined
 
-    showStanza(this.dataset.id, drawStanza)
+
+    showStanza(next, drawStanza)
   }
 
   function updateUrl () {
@@ -226,7 +229,7 @@ $(function () {
     $('#previous-holder').removeClass('js-hidden')
 
     changeLink = buildElement('a', 'col change-answer click-target', 'Change')
-    changeLink.dataset.id = this.dataset.id
+    changeLink.dataset.target = $("#holder .line").first().get(0).dataset.id
     $(changeLink).on('click', change)
 
     question = currentResponse.querySelector('.question')
@@ -240,9 +243,8 @@ $(function () {
 
     $('#holder').empty()
     currentResponse = undefined
+
     showStanza(this.dataset.next, drawStanza)
-
-
   }
 
   function popState (state) {
@@ -274,9 +276,9 @@ $(function () {
     }
 
     if (stanza.hasWebchat()) {
-      line = buildElement('div', stanza.getType(), stanza.getWebchat())
+      line = buildElement('div', "line " + stanza.getType(), stanza.getWebchat())
     } else {
-      line = buildElement('div', stanza.getType(), stanza.getText())
+      line = buildElement('div', "line " + stanza.getType(), stanza.getText())
     }
 
     if ('link' in stanza.data) {
@@ -289,6 +291,8 @@ $(function () {
       }
       line.appendChild(link)
     }
+
+    line.dataset.id = stanza.data.id
 
     replacePlaceholders(line)
     currentResponse.appendChild(line)
@@ -303,8 +307,6 @@ $(function () {
         answer = buildElement('a', 'answer click-target', getPhrase(stanza.data.answers[i]))
 
         answer.dataset.next = stanza.data.next[i]
-        answer.dataset.id = stanza.data.id
-
         $(answer).on('click', answerClick)
 
         answerBlock.appendChild(buildElement('li', 'answer-holder', answer))
