@@ -263,7 +263,7 @@ $(function () {
 
   function drawStanza (stanza) {
 
-    var i, answer, answerBlock, link, line
+    var i, answer, answerBlock, link, line, text
 
     if (currentResponse === undefined) {
       currentResponse = buildElement('div', 'complex-response')
@@ -275,11 +275,13 @@ $(function () {
       return
     }
 
-    if (stanza.hasWebchat()) {
-      line = buildElement('div', "line " + stanza.getType(), stanza.getWebchat())
-    } else {
-      line = buildElement('div', "line " + stanza.getType(), stanza.getText())
+    text = stanza.hasWebchat() ? stanza.getWebchat() : stanza.getText()
+    if (text === "") {
+      showStanza(stanza.data.next[0], drawStanza)
+      return
     }
+
+    line = buildElement('div', "line " + stanza.getType(), text)
 
     if ('link' in stanza.data) {
       link = buildElement('a', 'click-target')
