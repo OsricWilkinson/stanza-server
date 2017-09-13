@@ -37,8 +37,8 @@
     "id": "oct90002",
     "ocelot": 1,
     "lastAuthor": "6075844",
-    "lastUpdate": 1505303627916,
-    "version": 3,
+    "lastUpdate": 1505304057746,
+    "version": 4,
     "filename": "oct90002.js"
   },
   "flow": {
@@ -207,143 +207,137 @@
     "26": {
       "type": "InstructionStanza",
       "text": 50,
-      "next": ["27"],
-      "stack": true
-    },
-    "27": {
-      "type": "InstructionStanza",
-      "text": 51,
       "next": ["28"],
       "stack": true
     },
     "28": {
       "type": "QuestionStanza",
-      "text": 52,
-      "answers": [53, 54],
+      "text": 51,
+      "answers": [52, 53],
       "next": ["22", "29"],
       "stack": false
     },
     "29": {
       "type": "InstructionStanza",
-      "text": 55,
+      "text": 54,
       "next": ["30"],
       "stack": true
     },
     "30": {
       "type": "InstructionStanza",
-      "text": 56,
+      "text": 55,
       "next": ["end"],
       "stack": true
     },
     "31": {
       "type": "QuestionStanza",
-      "text": 57,
-      "answers": [58, 59],
+      "text": 56,
+      "answers": [57, 58],
       "next": ["32", "22"],
       "stack": false
     },
     "32": {
       "type": "InstructionStanza",
-      "text": 60,
+      "text": 59,
       "next": ["33"],
       "stack": true
     },
     "33": {
       "type": "InstructionStanza",
-      "text": 61,
+      "text": 60,
       "next": ["end"],
       "stack": true
     },
     "34": {
       "type": "InstructionStanza",
-      "text": 62,
+      "text": 61,
       "next": ["35"],
       "stack": true
     },
     "35": {
       "type": "InstructionStanza",
-      "text": 63,
+      "text": 62,
       "next": ["36"],
       "stack": true
     },
     "36": {
       "type": "QuestionStanza",
-      "text": 64,
-      "answers": [65, 66],
+      "text": 63,
+      "answers": [64, 65],
       "next": ["37", "42"],
       "stack": false
     },
     "37": {
       "type": "QuestionStanza",
-      "text": 67,
-      "answers": [68, 69],
+      "text": 66,
+      "answers": [67, 68],
       "next": ["38", "41"],
       "stack": false
     },
     "38": {
       "type": "InstructionStanza",
-      "text": 70,
+      "text": 69,
       "next": ["39"],
       "stack": true
     },
     "39": {
       "type": "InstructionStanza",
-      "text": 71,
+      "text": 70,
       "next": ["40"],
       "stack": true
     },
     "40": {
       "type": "InstructionStanza",
-      "text": 72,
+      "text": 71,
       "next": ["end"],
       "stack": true
     },
     "41": {
       "type": "InstructionStanza",
-      "text": 73,
+      "text": 72,
       "next": ["end"],
       "stack": true
     },
     "42": {
       "type": "InstructionStanza",
-      "text": 74,
+      "text": 73,
       "next": ["43"],
       "stack": true
     },
     "43": {
       "type": "InstructionStanza",
-      "text": 75,
+      "text": 74,
       "next": ["44"],
       "stack": true
     },
     "44": {
       "type": "InstructionStanza",
-      "text": 76,
+      "text": 75,
       "next": ["end"],
       "stack": true
     },
     "45": {
       "type": "QuestionStanza",
-      "text": 77,
-      "answers": [78, 79],
+      "text": 76,
+      "answers": [77, 78],
       "next": ["46", "47"],
       "stack": false
     },
     "46": {
       "type": "InstructionStanza",
-      "text": 80,
+      "text": 79,
       "next": ["48"],
       "stack": true
     },
     "47": {
       "type": "InstructionStanza",
-      "text": 73,
+      "text": 72,
       "next": ["end"],
       "stack": true
     },
     "48": {
       "type": "InstructionStanza",
-      "text": 81,
+      "text": 80,
       "next": ["end"],
       "stack": true
     },
@@ -409,7 +403,7 @@
     ["Ask the customer if they have successfully entered their NI number", "Did you enter your National Insurance number, name, and date of birth correctly?"],
     ["Ask the customer if they have successfully entered their name", ""],
     ["Ask the customer if they have successfully entered their date of birth", ""],
-    ["Ask the customer if they have successfully progressed to the next stage", "Did you get to the next stage after you'd entered your personal details?"], "Has the customer be able to enter their details and progressed to the next stage", "Yes - I have progressed to the next stage", "No - I have not progress to the next stage", ["Tell the customer we will need to check the details we hold", "We will need to check the details we hold."],
+    ["Ask the customer if they were able to progress to the next stage?", "Were you able to progress to the next stage?"], "Yes - I have progressed to the next stage", "No - I have not progress to the next stage", ["Tell the customer we will need to check the details we hold", "We will need to check the details we hold."],
     ["Tell the customer we can transfer them to an advisor (taxes)", "You will need to speak to an adviser."],
     ["Ask the customer if they have changed their phone number?", "Have you changed your phone number?"], "yes - they have updated their phone number", "no - they have not updated their phone number", ["Tell the customer they can now update their phone number online", "If you've changed your phone number you can amend this by selecting the link 'I don't have access to that phone' . You'll find the link under the access code box."],
     ["Tell the customer click the link under the access code box 'I don't have access to that phone'", "Tell the customer click the link under the access code box 'I don't have access to that phone'."],
