@@ -220,7 +220,7 @@ $(function () {
     answers.push($(this).closest('.answer-holder').index())
     updateUrl()
 
-    answer = buildElement('div', 'col')
+    answer = buildElement('div', 'js-col')
 
     while (this.firstChild) {
       answer.appendChild(this.firstChild)
@@ -228,12 +228,12 @@ $(function () {
 
     $('#previous-holder').removeClass('js-hidden')
 
-    changeLink = buildElement('a', 'col change-answer click-target', 'Change')
+    changeLink = buildElement('a', 'js-col change-answer click-target', 'Change')
     changeLink.dataset.target = $("#holder .line").first().get(0).dataset.id
     $(changeLink).on('click', change)
 
     question = currentResponse.querySelector('.question')
-    question.classList.add('col')
+    question.classList.add('js-col')
 
     $('#previous').prepend(buildElement('div', 'row',
       question,

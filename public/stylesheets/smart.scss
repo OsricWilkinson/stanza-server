@@ -3,51 +3,47 @@
 @import '../govuk-toolkit/stylesheets/design-patterns/_alpha-beta.scss';
 
 * {
-    box-sizing: border-box;
-}
-
-.container {
-  @extend %site-width-container;
+  box-sizing: border-box;
 }
 
 #alert:empty {
-    display: none;
+  display: none;
 }
 
 #alert {
-    border-radius: 8px;
-    padding: 8px;
-
+  border-radius: 8px;
+  padding: 8px;
 }
 
 #holder {
-    margin-bottom: 3em;
-}
-
-#previous-instructions {
-  display: flex;
-  flew-flow: row nowrap;
-  justify-content: space-between;
+  margin-top: 2em;
+  margin-bottom: 3em;
 }
 
 #previous-holder {
-    display: block;
+  display: block;
 }
 
 #previous {
-    display: flex;
-    flex-flow: column nowrap;
-}
-
-#previous .row {
+  display: flex;
+  flex-flow: column nowrap;
+  .row {
     display: flex;
     flex-flow: row nowrap;
     justify-content: space-between;
+
+    > * {
+      margin-left: 1em;
+      margin-right: 1em;
+    }
+  }
 }
 
-#previous .row > * {
-    margin-left: 1em;
-    margin-right: 1em;
+#previous-instructions {
+  margin-bottom: 0.5em;
+  a {
+    margin-left: 2em;
+  }
 }
 
 .click-target {
@@ -60,7 +56,7 @@
   margin-bottom: 1em;
 }
 
-.col {
+.js-col {
   width: 33%;
 }
 
@@ -68,4 +64,8 @@
 
 .phrase-banner {
   @include phase-banner()
+}
+
+.container {
+  @extend %site-width-container;
 }
