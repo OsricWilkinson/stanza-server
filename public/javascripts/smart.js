@@ -318,6 +318,8 @@ $(function () {
   }
 
   function reset () {
+    answers = []
+    updateUrl()
     $('#holder').empty()
     $('#previous-holder').addClass('js-hidden')
     $('#previous').empty()
