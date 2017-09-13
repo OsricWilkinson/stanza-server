@@ -15,7 +15,7 @@ GET        /process/:proc/phrases               controllers.StanzaController.get
 GET        /process/:proc/link/:idx             controllers.StanzaController.getLink(proc, idx : Int)
 
 GET        /smart/:proc                  controllers.SmartController.getResult(proc)
-
+GET         /smart/:proc/h/*path        controllers.SmartController.getResultWithPath(proc, path)
 GET        /stream                              controllers.WebsocketController.socket
 
 # Map static resources from the /public folder to the /assets URL path

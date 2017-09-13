@@ -11,12 +11,17 @@ class SmartController @Inject()(cc: ControllerComponents, environment: Environme
 
   def getResult(processId: String) = Action {
     getProcess(processId) match {
-   //   case Some(process) => Ok(views.html.smart(Json.stringify(process)))
       case Some(process) => Ok(views.html.smart())
       case None => NotFound( "Process not found")
     }
   }
 
+  def getResultWithPath(processId: String, path: String) = Action {
+    getProcess(processId) match {
+      case Some(process) => Ok(views.html.smart())
+      case None => NotFound( "Process not found")
+    }
+  }
 
   private def getProcess(id: String): Option[JsValue] = {
 
