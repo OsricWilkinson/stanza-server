@@ -1,45 +1,12 @@
 {
   "meta": {
-    "howto": [],
-    "contacts": [],
-    "links": [{
-      "dest": "https://online.hmrc.gov.uk/user/credentials/userid?affinityGroup=individual&service=self-assessment&contactMethod=online",
-      "title": "lost user ID service",
-      "window": true,
-      "leftbar": false
-    }, {
-      "dest": "https://online.hmrc.gov.uk/user/credentials/userid?affinityGroup=individual&service=self-assessment&contactMethod=postal",
-      "title": "Re-issue user ID by post",
-      "window": true,
-      "leftbar": true
-    }, {
-      "dest": "https://online.hmrc.gov.uk/user/credentials/userid?affinityGroup=agent&service=self-assessment",
-      "title": "lost user ID service - Agent",
-      "window": true,
-      "leftbar": false
-    }, {
-      "dest": "https://online.hmrc.gov.uk/user/credentials/userid?affinityGroup=organisation",
-      "title": "lost User I.D service - organisation",
-      "window": true,
-      "leftbar": true
-    }, {
-      "dest": "https://www.tax.service.gov.uk/government-gateway-lost-credentials-frontend/choose-your-account?continue=%2Faccount&origin=unknown&forgottenOption=password",
-      "title": "Lost password",
-      "window": true,
-      "leftbar": true
-    }, {
-      "dest": "https://www.tax.service.gov.uk/government-gateway-lost-credentials-frontend/choose-your-account?continue=%2Faccount&origin=unknown&forgottenOption=UserIdAndPassword",
-      "title": "Lost password and user ID",
-      "window": true,
-      "leftbar": true
-    }],
     "title": "Ocelot Trial POC external guidance",
     "id": "oct90002",
     "ocelot": 1,
     "lastAuthor": "6075844",
-    "lastUpdate": 1505304057746,
-    "version": 4,
-    "filename": "oct90002.js"
+    "lastUpdate": 1507126672650,
+    "filename": "oct90002.js",
+    "version": 6
   },
   "flow": {
     "1": {
@@ -66,311 +33,317 @@
     "4": {
       "type": "QuestionStanza",
       "text": 16,
-      "answers": [17, 18],
+      "answers": [10, 11],
       "next": ["5", "6"],
       "stack": false
     },
     "5": {
       "type": "InstructionStanza",
-      "text": 19,
+      "text": 17,
       "next": ["8"],
       "link": 0,
       "stack": true
     },
     "6": {
       "type": "InstructionStanza",
-      "text": 22,
+      "text": 20,
       "next": ["end"],
       "stack": true
     },
     "7": {
       "type": "InstructionStanza",
-      "text": 23,
+      "text": 21,
       "next": ["end"],
       "link": 2,
       "stack": true
     },
     "8": {
       "type": "InstructionStanza",
-      "text": 20,
+      "text": 18,
       "next": ["9"],
       "link": 1,
       "stack": true
     },
     "9": {
       "type": "InstructionStanza",
-      "text": 21,
+      "text": 19,
       "next": ["end"],
       "stack": false
     },
     "10": {
       "type": "QuestionStanza",
-      "text": 25,
-      "answers": [13, 26, 15],
+      "text": 23,
+      "answers": [13, 14, 15],
       "next": ["11", "7", "7"],
       "stack": false
     },
     "11": {
       "type": "QuestionStanza",
       "text": 16,
-      "answers": [17, 27],
+      "answers": [10, 11],
       "next": ["15", "14"],
       "stack": false
     },
     "12": {
       "type": "InstructionStanza",
-      "text": 31,
+      "text": 27,
       "next": ["13"],
       "stack": true
     },
     "13": {
       "type": "InstructionStanza",
-      "text": 32,
+      "text": 28,
       "next": ["end"],
       "stack": true
     },
     "14": {
       "type": "InstructionStanza",
-      "text": 22,
+      "text": 20,
       "next": ["end"],
       "stack": true
     },
     "15": {
       "type": "InstructionStanza",
-      "text": 28,
+      "text": 24,
       "next": ["51"],
       "stack": false
     },
     "16": {
       "type": "QuestionStanza",
       "text": 9,
-      "answers": [33, 34],
+      "answers": [10, 11],
       "next": ["7", "17"],
       "stack": false
     },
     "17": {
       "type": "InstructionStanza",
-      "text": 35,
+      "text": 29,
       "next": ["18"],
       "stack": true
     },
     "18": {
       "type": "InstructionStanza",
-      "text": 36,
+      "text": 30,
       "next": ["19"],
       "stack": true
     },
     "19": {
       "type": "InstructionStanza",
-      "text": 37,
+      "text": 31,
       "next": ["end"],
       "stack": true
     },
     "20": {
       "type": "QuestionStanza",
-      "text": 40,
-      "answers": [41, 42],
+      "text": 34,
+      "answers": [10, 11],
       "next": ["21", "31"],
       "stack": false
     },
     "21": {
       "type": "QuestionStanza",
-      "text": 43,
-      "answers": [44, 45],
+      "text": 35,
+      "answers": [36, 37],
       "next": ["22", "24"],
       "stack": false
     },
     "22": {
       "type": "InstructionStanza",
-      "text": 46,
+      "text": 38,
       "next": ["23"],
       "stack": true
     },
     "23": {
       "type": "InstructionStanza",
-      "text": 47,
+      "text": 39,
       "next": ["end"],
       "stack": true
     },
     "24": {
       "type": "InstructionStanza",
-      "text": 48,
+      "text": 40,
       "next": ["25"],
       "stack": true
     },
     "25": {
       "type": "InstructionStanza",
-      "text": 49,
+      "text": 41,
       "next": ["26"],
       "stack": true
     },
     "26": {
       "type": "InstructionStanza",
-      "text": 50,
+      "text": 42,
+      "next": ["27"],
+      "stack": true
+    },
+    "27": {
+      "type": "InstructionStanza",
+      "text": 43,
       "next": ["28"],
       "stack": true
     },
     "28": {
       "type": "QuestionStanza",
-      "text": 51,
-      "answers": [52, 53],
+      "text": 44,
+      "answers": [10, 11],
       "next": ["22", "29"],
       "stack": false
     },
     "29": {
       "type": "InstructionStanza",
-      "text": 54,
+      "text": 45,
       "next": ["30"],
       "stack": true
     },
     "30": {
       "type": "InstructionStanza",
-      "text": 55,
+      "text": 46,
       "next": ["end"],
       "stack": true
     },
     "31": {
       "type": "QuestionStanza",
-      "text": 56,
-      "answers": [57, 58],
+      "text": 47,
+      "answers": [10, 11],
       "next": ["32", "22"],
       "stack": false
     },
     "32": {
       "type": "InstructionStanza",
-      "text": 59,
+      "text": 48,
       "next": ["33"],
       "stack": true
     },
     "33": {
       "type": "InstructionStanza",
-      "text": 60,
+      "text": 49,
       "next": ["end"],
       "stack": true
     },
     "34": {
       "type": "InstructionStanza",
-      "text": 61,
+      "text": 50,
       "next": ["35"],
       "stack": true
     },
     "35": {
       "type": "InstructionStanza",
-      "text": 62,
+      "text": 51,
       "next": ["36"],
       "stack": true
     },
     "36": {
       "type": "QuestionStanza",
-      "text": 63,
-      "answers": [64, 65],
+      "text": 52,
+      "answers": [10, 11],
       "next": ["37", "42"],
       "stack": false
     },
     "37": {
       "type": "QuestionStanza",
-      "text": 66,
-      "answers": [67, 68],
+      "text": 53,
+      "answers": [10, 11],
       "next": ["38", "41"],
       "stack": false
     },
     "38": {
       "type": "InstructionStanza",
-      "text": 69,
+      "text": 54,
       "next": ["39"],
       "stack": true
     },
     "39": {
       "type": "InstructionStanza",
-      "text": 70,
+      "text": 55,
       "next": ["40"],
       "stack": true
     },
     "40": {
       "type": "InstructionStanza",
-      "text": 71,
+      "text": 56,
       "next": ["end"],
       "stack": true
     },
     "41": {
       "type": "InstructionStanza",
-      "text": 72,
+      "text": 57,
       "next": ["end"],
       "stack": true
     },
     "42": {
       "type": "InstructionStanza",
-      "text": 73,
+      "text": 58,
       "next": ["43"],
       "stack": true
     },
     "43": {
       "type": "InstructionStanza",
-      "text": 74,
+      "text": 59,
       "next": ["44"],
       "stack": true
     },
     "44": {
       "type": "InstructionStanza",
-      "text": 75,
+      "text": 60,
       "next": ["end"],
       "stack": true
     },
     "45": {
       "type": "QuestionStanza",
-      "text": 76,
-      "answers": [77, 78],
+      "text": 61,
+      "answers": [10, 11],
       "next": ["46", "47"],
       "stack": false
     },
     "46": {
       "type": "InstructionStanza",
-      "text": 79,
+      "text": 62,
       "next": ["48"],
       "stack": true
     },
     "47": {
       "type": "InstructionStanza",
-      "text": 72,
+      "text": 57,
       "next": ["end"],
       "stack": true
     },
     "48": {
       "type": "InstructionStanza",
-      "text": 80,
+      "text": 63,
       "next": ["end"],
       "stack": true
     },
     "49": {
       "type": "InstructionStanza",
-      "text": 38,
+      "text": 32,
       "next": ["end"],
       "link": 4,
       "stack": true
     },
     "50": {
       "type": "InstructionStanza",
-      "text": 39,
+      "text": 33,
       "next": ["end"],
       "link": 5,
       "stack": true
     },
     "51": {
       "type": "InstructionStanza",
-      "text": 29,
+      "text": 25,
       "next": ["53"],
       "stack": true
     },
     "52": {
       "type": "InstructionStanza",
-      "text": 24,
+      "text": 22,
       "next": ["end"],
       "link": 3,
       "stack": true
     },
     "53": {
       "type": "InstructionStanza",
-      "text": 30,
+      "text": 26,
       "next": ["12"],
       "stack": true
     },
@@ -386,36 +359,76 @@
     }
   },
   "phrases": [
-    ["Ask the customer what problem are they having logging in?", "What problem are you having logging in?"], "Forgotten [glossary:User ID]", "Forgotten Password", "Forgotten Both", "Access code or Identity verification problems", "Requested [glossary:User ID] by post not received ", "Other", ["Ask the customer which online HMRC service are they trying to access?", "Which online service are you trying to sign in to?"], "Self Assessment ", ["Ask the customer if they have their password?", "Do you have your password?"], "Yes - I have my password", "No - I do not have my password", ["Ask the customer what kind of account do they have?", "What kind of account do you have?"], "[glossary:Individual]", "[glossary:Agent]", "[glossary:Organisation]", ["Ask the customer if they have their [glossary:UTR] number", "Do you have your [glossary:UTR] number?"], "Yes - I have my UTR", "no - I do not have my UTR", ["Tell the customer if they have their UTR we are able to re-issue their user ID online - we will send the User ID to the email address we hold on their Self Assessment account", "If you have their UTR we can re-issue your user ID online to the email address we hold on your Self Assessment account."],
-    ["Tell the customer if they have their UTR we are able to re-issue their user ID by post - we will send the User ID within seven days to the address we hold on their Self Assessment account", "Or we can issue your UTR by post. It will take seven days to the address we hold on your Self Assessment account."],
-    ["Tell the customer if they do not have their UTR or they have changed their email or postal address we need to transfer them to an advisor.", "If you do not have your UTR you will need to speak to an advisor."],
-    ["Tell the customer if they do not have the UTR number we need to transfer them to an advisor", "If you do not have your UTR you will need to speak to an advisor"],
+    ["Ask the customer what is the reason they are unable to log in?", "Please tell us why you're having difficulties signing in"], "Forgotten [glossary:User ID]", "Forgotten Password", "Forgotten Both", "Access code or Identity verification problems", "Requested [glossary:User ID] by post not received ", "Other", ["Ask the customer which online HMRC service are they trying to access?", "Which online service are you trying to sign in to?"], "Self Assessment ", ["Ask the customer if they have their password?", "Do you have your password?"], "Yes", "No", ["Ask the customer what kind of account they have?", "What type of online account do you have [glossary:Individual], [glossary:agent] or [glossary:org]"], "[glossary:Individual]", "[glossary:agent]", "[glossary:Organisation]", ["Ask the customer if they have their [glossary:UTR] number", "Do you have your [glossary:UTR] number?"],
+    ["Tell the customer if they have their UTR we are able to re-issue their user ID online -we will send the User ID to the email address we hold on their Self Assessment account", "If you have your Unique Tax Reference please tell us how you want us to re-issue your User ID\n- email - we'll send your user ID to the address on your Self Assessment account\n- post - we'll send your user ID within 7 days to the address on your Self Assessment account"],
+    ["Tell the customer if they have their UTR we are able to re-issue their user ID by post - we will send the User ID within seven days to the address we hold on their Self Assessment account", "Graeme - not sure whether I'm displaying this right see box above"],
+    ["Tell the customer if they do not have their UTR or they have changed their email or postal address we need to transfer them to an advisor.", "If you don’t have your UTR, or you've changed your email or post address I can transfer you to an adviser. KC says - obv a webchat adviser wouldn't be saying this, we need to think how we transfer them to an adviser then think what the text says. "],
+    ["Tell the customer if they do not have the UTR number we need to transfer them to an advisor", "If you don't have your UTR I'll need to transfer you to an adviser. Same comment as above."],
     ["Tell the customer if they have their password they can use our lost user ID service for the Agent account", "If you have your password you can use our Agent's lost user ID service."],
     ["Tell the customer if they have their password they can use our lost user ID service for their Organisation account", "If you have your password you can use our lost user ID service for organisations"],
-    ["Ask the customer what type account they have?", "What type of online account do you have?"], "[glossary:agent]", "No - I do not have my UTR", ["Tell the customer if they require urgent access to their account they can they use the [glossary:Gov.uk verify ] service. this will ask them a series of questions related to their financial history to confirm their ID", "If you require urgent access to your account you can use the [glossary:Gov.uk verify] service to sign in. This service will ask you to provide information from official documents and possibly some questions about your financial situation to verify your identity. "],
+    ["Ask the customer what type account they have?", "What type of online account do you have?"],
+    ["Tell the customer if they require urgent access to their account they can they use the [glossary:Gov.uk verify ] service. this will ask them a series of questions related to their financial history to confirm their ID", "If you require urgent access to your account you can use the [glossary:Gov.uk verify ] service to sign in. This service will ask you to provide information from official documents and possibly some questions about your financial situation to verify your identity. "],
     ["Tell the customer if they require urgent access to their account they can they use the [glossary:Gov.uk verify ] service. if they do not have these details to hand we can send their ID by post. ", "If you don't want to use the GOV.UK Verify service, we can send your user ID by post. We'll send it within 7 days to the address on your Self Assessment account."],
-    ["Tell the customer if they require urgent access to their account they can they use the [glossary:Gov.uk verify ] service. We will send the User ID by post within seven days to the address we hold on their Self Assessment account.", ""],
-    ["Ask the customer how they would like to gain access to their account? Gov.uk Verify", "How would you like to gain access to your account? Gov.uk Verify or by post?"],
-    ["Ask the customer how they would like to gain access to their account? by post", ""], "yes - they have their password", "no - they do no have their password", ["Tell the customer if they do not have the UTR number ", "We can't help you online without your UTR."],
-    ["Tell the customer they will need to contact us", "You will need to contact us another way."],
-    ["Tell the customer we can transfer them to an advisor (OSH)", ""], "Lost password", "Lost password and user ID", ["Ask the customer if they have received an access code?", "Did you receive an access code?"], "Yes - I have received my access code", "No - I have not received my access code", ["Ask the customer what is the issue they are having", "What is the issue you are having?"], "I am receiving an error message after entering the access code", "I have a problem with the ID verification process", ["Tell the customer to select 'get help with this page' on the page that is displaying the error", "If you select the 'get help with this page' link on the page where you were having difficulties, you'll be able to report the problem. It can take us up to 48 hours to respond."],
-    ["Tell the customer they will hear back in 48 hours", ""],
-    ["Ask the customer if they have successfully entered their NI number", "Did you enter your National Insurance number, name, and date of birth correctly?"],
-    ["Ask the customer if they have successfully entered their name", ""],
-    ["Ask the customer if they have successfully entered their date of birth", ""],
-    ["Ask the customer if they were able to progress to the next stage?", "Were you able to progress to the next stage?"], "Yes - I have progressed to the next stage", "No - I have not progress to the next stage", ["Tell the customer we will need to check the details we hold", "We will need to check the details we hold."],
-    ["Tell the customer we can transfer them to an advisor (taxes)", "You will need to speak to an adviser."],
-    ["Ask the customer if they have changed their phone number?", "Have you changed your phone number?"], "yes - they have updated their phone number", "no - they have not updated their phone number", ["Tell the customer they can now update their phone number online", "If you've changed your phone number you can amend this by selecting the link 'I don't have access to that phone' . You'll find the link under the access code box."],
-    ["Tell the customer click the link under the access code box 'I don't have access to that phone'", ""],
-    ["Ask the customer if they requested their user ID before [timescale:2 weeks:date_ago] for a UK based customer", "If you're based in the UK, did you ask us to re-issue your user ID before [timescale:2 weeks:date_ago]?"],
-    ["Ask the customer if they requested their user ID before [timescale:3 weeks:date_ago] for a customer based outside of the UK.", "If you're not based in the UK, did you ask us to re-issue your user ID before [timescale:3 weeks:date_ago]?"],
-    ["Ask the customer when did they request the user ID be re-issued?", "Did you request the user ID before or after the dates shown?"], "Yes - requested before date", "No - requested after date", ["Ask the customer if they changed their address within 72 hours of requesting the user ID?", "Did you change your address within 72 hours of asking us to re-issue your user ID?"], "Yes - I changed my address within 72 hours of requesting the user ID", "No - I did not change my address within 72 hours of requesting the user ID", ["Tell the customer changes to address can take up to 72 hours ", "It can take up to 72 hours for the system to update after a change of address. "],
-    ["Tell the customer they need to allow this time for our systems to update", "You need to allow this time for our systems to update."],
+    ["Tell the customer if they require urgent access to their account they can they use the [glossary:Gov.uk verify ] service. we will send the User ID by post within seven days to the address we hold on their Self Assessment account.", "If you require urgent access to your account you can use the [glossary:Gov.uk verify ] service to sign in. This service will ask you to provide information from official documents and possibly some questions about your financial situation to verify your identity. We'll send your user ID by post within 7 days to the address on your Self Assessment account."],
+    ["Ask the customer how they would like to gain access to their account? Gov.uk Verify", "How would you like to gain access to your account? Gov.uk Verify or by post ? KC says - I need to follow the journey to understand the logic of what this question is about. Will come back and look at this again. "],
+    ["Ask the customer how they would like to gain access to their account? by post", "Ask the customer how they would like to gain access to their account? by post KC says - I need to follow the journey to understand the logic of what this question is about. Will come back and look at this again. "],
+    ["Tell the customer if they do not have the UTR number ", "If you don't have your UTR you'll need to speak to an adviser. Shall I transfer you to an adviser? Yes/No"],
+    ["Tell the customer they will need to contact us", "You'll need to speak to an adviser. Shall I transfer you to an adviser? Yes/No"],
+    ["Tell the customer we can transfer them to an advisor (OSH)", "You'll need to speak to an adviser. Shall I transfer you to an adviser? Yes/No"], "Lost password", "Lost password and user ID", ["Ask the customer if they have received an access code?", "Did you receive an access code?"],
+    ["Ask the customer what is the issue they are having", "Please select one of the following to tell tell us more about your problem  \n- error message received after submitting the access code\n- difficulties with the identity verification\n- neither of these"], "Error message after entering the access code", "Problem with ID verification process", ["Tell the customer to select 'get help with this page' on the page that is displaying the error", "If you select the 'get help with this page' link on the page where you were having difficulties, you'll be able to report the problem. It can take us up to 48 hours to respond."],
+    ["Tell the customer they will hear back in 48 hours", "see box above"],
+    ["Ask the customer if they have successfully entered their NI number", "Did you enter your National Insurance number correctly?"],
+    ["Ask the customer if they have successfully entered their name", "Did you enter your name and date of birth correctly?"],
+    ["Ask the customer if they have successfully entered their date of birth", "Did you enter your date of birth correctly?"],
+    ["Ask the customer if they have successfully progressed to the next stage", "Did you get to the next screen after you'd entered your personal details?"], "Has the customer be able to enter their details and progressed to the next stage", ["Tell the customer we will need to check the details we hold", "We need to check the details we hold, shall I transfer you to an adviser? [taxes] \n- yes \n- no"],
+    ["Tell the customer we can transfer them to an advisor (taxes)", "see text above"],
+    ["Ask the customer if they have changed their phone number?", "Have you changed your phone number?\n- yes \n- no"],
+    ["Tell the customer they can now update their phone number online", "If you've changed your phone number you can amend this by selecting the link 'I don't have access to that phone' . You'll find the link under the access code box "],
+    ["Tell the customer click the link under the access code box 'I don't have access to that phone'", "see text above"],
+    ["Ask the customer if they requested their user ID before [timescale:2 weeks:date_ago] for a UK based customer", "If you're based in the UK, did you ask us to re-issue your user ID before [timescale:2 weeks:date_ago] ? KC says - for this box and next 2 is it ID re-issue? "],
+    ["Ask the customer if they requested their user ID before [timescale:3 weeks:date_ago] for a customer based outside of the UK.", "If you're not based in the UK, did you ask us to re-issue your user ID before [timescale:3 weeks:date_ago]? KC says - see comment above"], "Did the customer request before the dates shown above?", ["Ask the customer if they changed their address within 72 hours of requesting the user ID?", "Did you change your address within 72 hours of asking us to re-issue your user ID? KC says - see comment above"],
+    ["Tell the customer changes to address can take up to 72 hours ", "It can take up to 72 hours for the system to update after a change of address. "],
+    ["Tell the customer they need to allow this time for our systems to update", "You need to allow this time for our systems to update KC says - this feels patronising when written surely if we tell them it takes 72 hours they know they need to wait that long? "],
     ["Tell the customer they will need to submit another request for the user ID to be sent out by post", "Unfortunately it looks like you'll need to submit another request for your user ID to be posted to you."],
-    ["Tell the customer we need to transfer them to an advisor (OSH) ?", "You will need to speak to one of our advisors."],
+    ["Tell the customer we need to transfer them to an advisor (OSH) ?", "We need to transfer you to an adviser (OSH) KC says - don't quite understand the logic of this bit will need to look at journey."],
     ["Tell the customer it can take up to 2 weeks to receive their user id by post if sent to a UK address.", "It can take up to 2 weeks for you to receive your user ID by post if it was sent to a UK address. "],
     ["Tell the customer it can take up to 3 weeks to receive their user id by post if sent to a non UK address.", "It can take up to 3 weeks for you to receive your user ID by post if it was sent to a non-UK address. "],
-    ["Tell the customer to get back in touch if they do not receive the user ID after these times.", "Please contact us if you haven't received your user ID after this time."],
-    ["Ask the customer if they have tried to log in more than three times?", "Have you tried to sign in more than 3 times?"], "Yes - I made more than three attempts to login", "No - I made three or less attempts to login", ["Tell the customer if they have entered an incorrect password 3 times they will have been automatically locked out", "If you've entered your password incorrectly more than 3 times the system will lock you out. You'll have wait 2 hours before you try and sign in to your account again."], "Tell the customer if they have entered an incorrect password 3 times to allow 2 hours and then try logging into their account again."
-  ]
+    ["Tell the customer to get back in touch if they do not receive the user ID after these times.", "If you don't receive your user ID after this time. Please contact us. "],
+    ["Ask the customer if they have tried to log in more than three times?", "Have you tried to sign in more than 3 times?"],
+    ["Tell the customer if they have entered an incorrect password 3 times they will have been automatically locked out", "If you've entered your password incorrectly more than 3 times the system will lock you out. You'll have wait 2 hours before you try and sign in to your account again."],
+    ["Tell the customer if they have entered an incorrect password 3 times to allow 2 hours and then try logging into their account again.", "If you've entered your password incorrectly more than 3 times the system will lock you out. You'll have wait 2 hours before you try and sign in to your account again."]
+  ],
+  "contacts": [],
+  "howto": [],
+  "links": [{
+    "dest": "https://online.hmrc.gov.uk/user/credentials/userid?affinityGroup=individual&service=self-assessment&contactMethod=online",
+    "title": "lost user ID service",
+    "window": true,
+    "leftbar": false
+  }, {
+    "dest": "https://online.hmrc.gov.uk/user/credentials/userid?affinityGroup=individual&service=self-assessment&contactMethod=postal",
+    "title": "Re-issue user ID by post",
+    "window": true,
+    "leftbar": true
+  }, {
+    "dest": "https://online.hmrc.gov.uk/user/credentials/userid?affinityGroup=agent&service=self-assessment",
+    "title": "lost user ID service - Agent",
+    "window": true,
+    "leftbar": false
+  }, {
+    "dest": "https://online.hmrc.gov.uk/user/credentials/userid?affinityGroup=organisation",
+    "title": "lost User I.D service - organisation",
+    "window": true,
+    "leftbar": true
+  }, {
+    "dest": "https://www.tax.service.gov.uk/government-gateway-lost-credentials-frontend/choose-your-account?continue=%2Faccount&origin=unknown&forgottenOption=password",
+    "title": "Lost password",
+    "window": true,
+    "leftbar": true
+  }, {
+    "dest": "https://www.tax.service.gov.uk/government-gateway-lost-credentials-frontend/choose-your-account?continue=%2Faccount&origin=unknown&forgottenOption=UserIdAndPassword",
+    "title": "Lost password and user ID",
+    "window": true,
+    "leftbar": true
+  }]
 }
