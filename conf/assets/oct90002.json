@@ -4,9 +4,9 @@
     "id": "oct90002",
     "ocelot": 1,
     "lastAuthor": "6031631",
-    "lastUpdate": 1507632954064,
+    "lastUpdate": 1507633342676,
     "filename": "oct90002.js",
-    "version": 15
+    "version": 16
   },
   "flow": {
     "1": {
@@ -354,7 +354,8 @@
     ["Tell the customer as they have donâ€™t have their User I.D and Password they need to contact us.", "Because you have donâ€™t have your User I.D and Password I am sorry you will need to contact us. I can transfer you to an adviser?"],
     ["Tell the customer if they do not have the UTR number ", "Because you don't have your UTR number you'll need to speak to a taxes adviser via [link:webchat:https://online.hmrc.gov.uk/webchatprod/templates/chat/hmrc7/chat.html?entryPointId=1004&templateName=hmrc7&languageCode=en&countryCode=US&ver=v11&eglvrefname=&null&referer=https%3A%2F%2Fonline.hmrc.gov.uk%2Fwebchatprod%2Fassistant%2Fbot%2FRuth%3Fask%3Dtrewq]"],
     ["Tell the customer they will need to contact us", "You'll need to speak to a taxes adviser via [link:webchat:https://online.hmrc.gov.uk/webchatprod/templates/chat/hmrc7/chat.html?entryPointId=1004&templateName=hmrc7&languageCode=en&countryCode=US&ver=v11&eglvrefname=&null&referer=https%3A%2F%2Fonline.hmrc.gov.uk%2Fwebchatprod%2Fassistant%2Fbot%2FRuth%3Fask%3Dtrewq]"],
-    ["Tell the customer we can transfer them to an advisor (OSH)", "You'll need to speak to a taxes adviser via [link:webchat:https://online.hmrc.gov.uk/webchatprod/templates/chat/hmrc7/chat.html?entryPointId=1004&templateName=hmrc7&languageCode=en&countryCode=US&ver=v11&eglvrefname=&null&referer=https%3A%2F%2Fonline.hmrc.gov.uk%2Fwebchatprod%2Fassistant%2Fbot%2FRuth%3Fask%3Dtrewq]"], "Lost password", "Lost password and user ID", ["Ask the customer if they have received an access code?", "Did you receive an access code?"],
+    ["Tell the customer we can transfer them to an advisor (OSH)", "You'll need to speak to a taxes adviser via [link:webchat:https://online.hmrc.gov.uk/webchatprod/templates/chat/hmrc7/chat.html?entryPointId=1004&templateName=hmrc7&languageCode=en&countryCode=US&ver=v11&eglvrefname=&null&referer=https%3A%2F%2Fonline.hmrc.gov.uk%2Fwebchatprod%2Fassistant%2Fbot%2FRuth%3Fask%3Dtrewq]"],
+    ["Tell the customer they can complete a lost password form at GOV.UK", "Please complete the lost password form by selecting this link."], "Lost password and user ID", ["Ask the customer if they have received an access code?", "Did you receive an access code?"],
     ["Ask the customer what is the issue they are having", "Please select one of the following to tell us more about your problem"], "Error message after submitting the access code", "Difficulties with the identity verification", ["Tell the customer to select 'get help with this page' on the page that is displaying the error", "If you select the 'get help with this page' link on the page where you were having difficulties, you'll be able to report the problem. "],
     ["Tell the customer they will hear back in 48 hours", "It can take us up to 48 hours to respond."], "Have you been able to enter your National Insurance number, name and date of birth and progress to the next stage", ["Tell the customer we will need to check the details we hold", "We need to check the details we hold, please speak to a taxes adviser via [link:webchat:https://online.hmrc.gov.uk/webchatprod/templates/chat/hmrc7/chat.html?entryPointId=1004&templateName=hmrc7&languageCode=en&countryCode=US&ver=v11&eglvrefname=&null&referer=https%3A%2F%2Fonline.hmrc.gov.uk%2Fwebchatprod%2Fassistant%2Fbot%2FRuth%3Fask%3Dtrewq]"],
     ["Tell the customer we can transfer them to an advisor (taxes)", "You will need to speak to a taxes adviser via [link:webchat:https://online.hmrc.gov.uk/webchatprod/templates/chat/hmrc7/chat.html?entryPointId=1004&templateName=hmrc7&languageCode=en&countryCode=US&ver=v11&eglvrefname=&null&referer=https%3A%2F%2Fonline.hmrc.gov.uk%2Fwebchatprod%2Fassistant%2Fbot%2FRuth%3Fask%3Dtrewq]"],
