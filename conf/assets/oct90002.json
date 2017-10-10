@@ -4,9 +4,9 @@
     "id": "oct90002",
     "ocelot": 1,
     "lastAuthor": "6031631",
-    "lastUpdate": 1507631622946,
+    "lastUpdate": 1507632280888,
     "filename": "oct90002.js",
-    "version": 9
+    "version": 13
   },
   "flow": {
     "1": {
@@ -42,7 +42,6 @@
       "text": 18,
       "answers": [19, 20],
       "next": ["end", "end"],
-      "link": 0,
       "stack": true
     },
     "6": {
@@ -55,7 +54,7 @@
       "type": "InstructionStanza",
       "text": 23,
       "next": ["end"],
-      "link": 1,
+      "link": 0,
       "stack": true
     },
     "9": {
@@ -288,14 +287,14 @@
       "type": "InstructionStanza",
       "text": 37,
       "next": ["end"],
-      "link": 3,
+      "link": 2,
       "stack": true
     },
     "50": {
       "type": "InstructionStanza",
       "text": 38,
       "next": ["end"],
-      "link": 4,
+      "link": 3,
       "stack": true
     },
     "51": {
@@ -308,7 +307,7 @@
       "type": "InstructionStanza",
       "text": 24,
       "next": ["end"],
-      "link": 2,
+      "link": 1,
       "stack": true
     },
     "53": {
@@ -343,21 +342,22 @@
   },
   "phrases": [
     ["Ask the customer what is the reason they are unable to log in?", "Please tell us why you're having difficulties signing in"], "Forgotten [glossary:user ID]", "Forgotten password", "Forgotten user ID and password", "Access code or identity verification problems", "Requested [glossary:user ID] by post not received ", "Other", ["Tell the customer they need to complete the lost password and user ID form", "You will need to complete the lost password and user ID form"],
-    ["Ask the customer which online HMRC service are they trying to access?", "Which online service are you trying to sign in to?"], "Self Assessment ", ["Ask the customer if they have their password?", "Do you have your password?"], "Yes", "No", ["Ask the customer what kind of account they have?", "What type of online account do you have [glossary:Individual], [glossary:agent] or [glossary:org]"], "[glossary:Individual]", "[glossary:Agent]", "[glossary:Organisation]", ["Ask the customer if they have their [glossary:UTR] number", "Do you have your [glossary:UTR] number?"], "Ask the customer how they would like their user ID reissued?", "[link:Online:https://online.hmrc.gov.uk/user/credentials/userid?affinityGroup=individual&service=self-assessment&contactMethod=online]", "[link:By post:https://online.hmrc.gov.uk/user/credentials/userid?affinityGroup=individual&service=self-assessment&contactMethod=postal]", ["Tell the customer if they do not have their UTR or they have changed their email or postal address we need to transfer them to an advisor.", "If you don’t have your UTR number, or you've changed your email or post address you'll need to speak to an adviser. Shall I transfer you to an adviser?\n- Yes\n- No"],
-    ["Tell the customer if they do not have the UTR number we need to transfer them to an advisor", "If you don’t have your UTR number, or you've changed your email or post address you'll need to speak to an adviser. Shall I transfer you to an adviser?\n- Yes\n- No"],
+    ["Ask the customer which online HMRC service are they trying to access?", "Which online service are you trying to sign in to?"], "Self Assessment ", ["Ask the customer if they have their password?", "Do you have your password?"], "Yes", "No", ["Ask the customer what kind of account they have?", "What type of online account do you have [glossary:Individual], [glossary:agent] or [glossary:org]"], "[glossary:Individual]", "[glossary:Agent]", "[glossary:Organisation]", ["Ask the customer if they have their [glossary:UTR] number", "Do you have your [glossary:UTR] number?"],
+    ["Ask the customer how they would like their user ID reissued?", "How would you like your user ID reissued?"], "[link:Online:https://online.hmrc.gov.uk/user/credentials/userid?affinityGroup=individual&service=self-assessment&contactMethod=online]", "[link:By post:https://online.hmrc.gov.uk/user/credentials/userid?affinityGroup=individual&service=self-assessment&contactMethod=postal]", ["Tell the customer if they do not have their UTR or they have changed their email or postal address we need to transfer them to an advisor.", ""],
+    ["Tell the customer if they do not have the UTR number we need to transfer them to an advisor", "If you donâ€™t have your UTR number, or you've changed your email or post address you'll need to speak to an adviser. You will need to speak to a taxes adviser via [link:webchat:https://online.hmrc.gov.uk/webchatprod/templates/chat/hmrc7/chat.html?entryPointId=1004&templateName=hmrc7&languageCode=en&countryCode=US&ver=v11&eglvrefname=&null&referer=https%3A%2F%2Fonline.hmrc.gov.uk%2Fwebchatprod%2Fassistant%2Fbot%2FRuth%3Fask%3Dtrewq]"],
     ["Tell the customer if they have their password they can use our lost user ID service for the Agent account", "If you have your password you can use our Agent's lost user ID service."],
     ["Tell the customer if they have their password they can use our lost user ID service for their Organisation account", "If you have your password you can use our lost user ID service for organisations"],
     ["Ask the customer what type account they have?", "What type of online account do you have?"],
-    ["Tell the customer if they require urgent access to their account they can they use the [glossary:Gov.uk verify ] service. this will ask them a series of questions related to their financial history to confirm their ID", "If you need urgent access to your account you can use the Gov.uk verify service to sign in. You’ll need to give information from official documents and possibly answer some questions about your financial situation to verify your identity.\n\n"],
+    ["Tell the customer if they require urgent access to their account they can they use the [glossary:Gov.uk verify ] service. this will ask them a series of questions related to their financial history to confirm their ID", "If you need urgent access to your account you can use the Gov.uk verify service to sign in. Youâ€™ll need to give information from official documents and possibly answer some questions about your financial situation to verify your identity.\n\n"],
     ["Tell the customer if they require urgent access to their account they can they use the [glossary:Gov.uk verify ] service. if they do not have these details to hand we can send their ID by post. ", "If you don't want to use the GOV.UK Verify service, we can send your user ID by post. We'll send it within 7 days to the address on your Self Assessment account."], "How do you want to get access to your account?", "Gov.uk Verify", "Post", ["Ask the customer how they would like to gain access to their account? Gov.uk Verify", "How do you want to get access to your account? "],
     ["Ask the customer how they would like to gain access to their account? by post", "How do you want to get access to your account? "],
-    ["Tell the customer as they have don’t have their User I.D and Password they need to contact us.", "Because you have don’t have your User I.D and Password I am sorry you will need to contact us. I can transfer you to an adviser?"],
+    ["Tell the customer as they have donâ€™t have their User I.D and Password they need to contact us.", "Because you have donâ€™t have your User I.D and Password I am sorry you will need to contact us. I can transfer you to an adviser?"],
     ["Tell the customer if they do not have the UTR number ", "Because you don't have your UTR number you'll need to speak to an adviser. Shall I transfer you to an adviser? \n- Yes\n- No"],
     ["Tell the customer they will need to contact us", "You'll need to speak to an adviser. Shall I transfer you to an adviser? \n- Yes\n- No"],
     ["Tell the customer we can transfer them to an advisor (OSH)", "You'll need to speak to an adviser. Shall I transfer you to an adviser? \n- Yes\n- No"], "Lost password", "Lost password and user ID", ["Ask the customer if they have received an access code?", "Did you receive an access code?"],
     ["Ask the customer what is the issue they are having", "Please select one of the following to tell us more about your problem"], "Error message after submitting the access code", "Difficulties with the identity verification", ["Tell the customer to select 'get help with this page' on the page that is displaying the error", "If you select the 'get help with this page' link on the page where you were having difficulties, you'll be able to report the problem. "],
-    ["Tell the customer they will hear back in 48 hours", "It can take us up to 48 hours to respond."], "Have you been able to enter your National Insurance number, name and date of birth and progress to the next stage", ["Tell the customer we will need to check the details we hold", "We need to check the details we hold, please speak to a taxes adviser via [link:webchat:https://online.hmrc.gov.uk/webchatprod/assistant/bot/Ruth?ask=trewq]"],
-    ["Tell the customer we can transfer them to an advisor (taxes)", "You will need to speak to a taxes adviser via [link:webchat:https://online.hmrc.gov.uk/webchatprod/assistant/bot/Ruth?ask=trewq]"],
+    ["Tell the customer they will hear back in 48 hours", "It can take us up to 48 hours to respond."], "Have you been able to enter your National Insurance number, name and date of birth and progress to the next stage", ["Tell the customer we will need to check the details we hold", "We need to check the details we hold, please speak to a taxes adviser via [link:webchat:https://online.hmrc.gov.uk/webchatprod/templates/chat/hmrc7/chat.html?entryPointId=1004&templateName=hmrc7&languageCode=en&countryCode=US&ver=v11&eglvrefname=&null&referer=https%3A%2F%2Fonline.hmrc.gov.uk%2Fwebchatprod%2Fassistant%2Fbot%2FRuth%3Fask%3Dtrewq]"],
+    ["Tell the customer we can transfer them to an advisor (taxes)", "You will need to speak to a taxes adviser via [link:webchat:https://online.hmrc.gov.uk/webchatprod/templates/chat/hmrc7/chat.html?entryPointId=1004&templateName=hmrc7&languageCode=en&countryCode=US&ver=v11&eglvrefname=&null&referer=https%3A%2F%2Fonline.hmrc.gov.uk%2Fwebchatprod%2Fassistant%2Fbot%2FRuth%3Fask%3Dtrewq]"],
     ["Ask the customer if they have changed their phone number?", "Have you changed your phone number?\n- Yes \n- No"],
     ["Tell the customer they can now update their phone number online", "If you've changed your phone number you can amend this by selecting the link 'I don't have access to that phone' . You'll find the link under the access code box. "],
     ["Tell the customer click the link under the access code box 'I don't have access to that phone'", ""],
@@ -377,11 +377,6 @@
   "contacts": [],
   "howto": [],
   "links": [{
-    "dest": "https://online.hmrc.gov.uk/user/credentials/userid?affinityGroup=individual&service=self-assessment&contactMethod=online",
-    "title": "lost user ID service",
-    "window": true,
-    "leftbar": false
-  }, {
     "dest": "https://online.hmrc.gov.uk/user/credentials/userid?affinityGroup=agent&service=self-assessment",
     "title": "lost user ID service - Agent",
     "window": true,
