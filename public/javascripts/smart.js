@@ -15,7 +15,8 @@ $(function () {
     // use your placeholder
     var vec = {
       glossary: _buildGlossary,
-      timescale: _buildTimescale
+      timescale: _buildTimescale,
+        link: _buildLink
     }
 
     // *** Utility functions ***
@@ -50,6 +51,21 @@ $(function () {
 
     function _buildGlossary (id, text) {
       return buildElement('span', 'glossary', text ? text : id)
+    }
+
+    function _buildLink(text) {
+        var link = "", i;
+        for (i = 2; i < arguments.length; i += 1) {
+            if (i > 2) {
+                link += ":";
+            }
+            link += arguments[i];
+        }
+ 
+        var a = buildElement("a", "click-target", text);
+        a.href = link;
+
+        return a;
     }
 
     // *** Infrastructure ***
