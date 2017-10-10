@@ -3,362 +3,344 @@
     "title": "Ocelot Trial POC external guidance",
     "id": "oct90002",
     "ocelot": 1,
-    "lastAuthor": "6075844",
-    "lastUpdate": 1507621734336,
+    "lastAuthor": "6031631",
+    "lastUpdate": 1507630891160,
     "filename": "oct90002.js",
-    "version": 7
+    "version": 8
   },
   "flow": {
     "1": {
       "type": "QuestionStanza",
-      "text": 7,
-      "answers": [8, 6],
+      "text": 8,
+      "answers": [9, 6],
       "next": ["2", "16"],
       "stack": false
     },
     "2": {
       "type": "QuestionStanza",
-      "text": 9,
-      "answers": [10, 11],
+      "text": 10,
+      "answers": [11, 12],
       "next": ["3", "10"],
       "stack": false
     },
     "3": {
       "type": "QuestionStanza",
-      "text": 12,
-      "answers": [13, 14, 15],
+      "text": 13,
+      "answers": [14, 15, 16],
       "next": ["4", "7", "52"],
       "stack": false
     },
     "4": {
       "type": "QuestionStanza",
-      "text": 16,
-      "answers": [10, 11],
+      "text": 17,
+      "answers": [11, 12],
       "next": ["5", "6"],
       "stack": false
     },
     "5": {
       "type": "InstructionStanza",
-      "text": 17,
+      "text": 18,
       "next": ["8"],
       "link": 0,
       "stack": true
     },
     "6": {
       "type": "InstructionStanza",
-      "text": 20,
-      "next": ["end"],
+      "text": 21,
+      "next": ["9"],
       "stack": true
     },
     "7": {
       "type": "InstructionStanza",
-      "text": 21,
+      "text": 22,
       "next": ["end"],
       "link": 2,
       "stack": true
     },
     "8": {
       "type": "InstructionStanza",
-      "text": 18,
-      "next": ["9"],
+      "text": 19,
+      "next": ["end"],
       "link": 1,
       "stack": true
     },
     "9": {
       "type": "InstructionStanza",
-      "text": 19,
+      "text": 20,
       "next": ["end"],
-      "stack": false
+      "stack": true
     },
     "10": {
       "type": "QuestionStanza",
-      "text": 23,
-      "answers": [13, 14, 15],
+      "text": 24,
+      "answers": [14, 15, 16],
       "next": ["11", "54", "54"],
       "stack": false
     },
     "11": {
       "type": "QuestionStanza",
-      "text": 16,
-      "answers": [10, 11],
+      "text": 17,
+      "answers": [11, 12],
       "next": ["15", "14"],
       "stack": false
     },
     "12": {
       "type": "InstructionStanza",
-      "text": 29,
+      "text": 30,
       "next": ["13"],
       "stack": true
     },
     "13": {
       "type": "InstructionStanza",
-      "text": 30,
+      "text": 31,
       "next": ["end"],
       "stack": true
     },
     "14": {
       "type": "InstructionStanza",
-      "text": 20,
+      "text": 21,
       "next": ["end"],
       "stack": true
     },
     "15": {
       "type": "InstructionStanza",
-      "text": 24,
+      "text": 25,
       "next": ["51"],
       "stack": false
     },
     "16": {
       "type": "QuestionStanza",
-      "text": 9,
-      "answers": [10, 11],
+      "text": 10,
+      "answers": [11, 12],
       "next": ["7", "17"],
       "stack": false
     },
     "17": {
       "type": "InstructionStanza",
-      "text": 32,
+      "text": 33,
       "next": ["18"],
       "stack": true
     },
     "18": {
       "type": "InstructionStanza",
-      "text": 33,
+      "text": 34,
       "next": ["19"],
       "stack": true
     },
     "19": {
       "type": "InstructionStanza",
-      "text": 34,
+      "text": 35,
       "next": ["end"],
       "stack": true
     },
     "20": {
       "type": "QuestionStanza",
-      "text": 37,
-      "answers": [10, 11],
+      "text": 38,
+      "answers": [11, 12],
       "next": ["21", "31"],
       "stack": false
     },
     "21": {
       "type": "QuestionStanza",
-      "text": 38,
-      "answers": [39, 40],
-      "next": ["22", "24"],
+      "text": 39,
+      "answers": [40, 41],
+      "next": ["22", "28"],
       "stack": false
     },
     "22": {
       "type": "InstructionStanza",
-      "text": 41,
+      "text": 42,
       "next": ["23"],
       "stack": true
     },
     "23": {
       "type": "InstructionStanza",
-      "text": 42,
-      "next": ["end"],
-      "stack": true
-    },
-    "24": {
-      "type": "InstructionStanza",
       "text": 43,
-      "next": ["25"],
-      "stack": true
-    },
-    "25": {
-      "type": "InstructionStanza",
-      "text": 44,
-      "next": ["26"],
-      "stack": true
-    },
-    "26": {
-      "type": "InstructionStanza",
-      "text": 45,
-      "next": ["27"],
-      "stack": true
-    },
-    "27": {
-      "type": "InstructionStanza",
-      "text": 46,
-      "next": ["28"],
+      "next": ["end"],
       "stack": true
     },
     "28": {
       "type": "QuestionStanza",
-      "text": 47,
-      "answers": [10, 11],
+      "text": 44,
+      "answers": [11, 12],
       "next": ["22", "29"],
       "stack": false
     },
     "29": {
       "type": "InstructionStanza",
-      "text": 48,
+      "text": 45,
       "next": ["30"],
       "stack": true
     },
     "30": {
       "type": "InstructionStanza",
-      "text": 49,
+      "text": 46,
       "next": ["end"],
       "stack": true
     },
     "31": {
       "type": "QuestionStanza",
-      "text": 50,
-      "answers": [10, 11],
+      "text": 47,
+      "answers": [11, 12],
       "next": ["32", "22"],
       "stack": false
     },
     "32": {
       "type": "InstructionStanza",
-      "text": 51,
+      "text": 48,
       "next": ["33"],
       "stack": true
     },
     "33": {
       "type": "InstructionStanza",
-      "text": 52,
+      "text": 49,
       "next": ["end"],
       "stack": true
     },
     "34": {
       "type": "InstructionStanza",
-      "text": 53,
+      "text": 50,
       "next": ["35"],
       "stack": true
     },
     "35": {
       "type": "InstructionStanza",
-      "text": 54,
+      "text": 51,
       "next": ["36"],
       "stack": true
     },
     "36": {
       "type": "QuestionStanza",
-      "text": 55,
-      "answers": [10, 11],
+      "text": 52,
+      "answers": [11, 12],
       "next": ["37", "42"],
       "stack": false
     },
     "37": {
       "type": "QuestionStanza",
-      "text": 56,
-      "answers": [10, 11],
+      "text": 53,
+      "answers": [11, 12],
       "next": ["38", "41"],
       "stack": false
     },
     "38": {
       "type": "InstructionStanza",
-      "text": 57,
+      "text": 54,
       "next": ["39"],
       "stack": true
     },
     "39": {
       "type": "InstructionStanza",
-      "text": 58,
+      "text": 55,
       "next": ["40"],
       "stack": true
     },
     "40": {
       "type": "InstructionStanza",
-      "text": 59,
+      "text": 56,
       "next": ["end"],
       "stack": true
     },
     "41": {
       "type": "InstructionStanza",
-      "text": 60,
+      "text": 57,
       "next": ["end"],
       "stack": true
     },
     "42": {
       "type": "InstructionStanza",
-      "text": 61,
+      "text": 58,
       "next": ["43"],
       "stack": true
     },
     "43": {
       "type": "InstructionStanza",
-      "text": 62,
+      "text": 59,
       "next": ["44"],
       "stack": true
     },
     "44": {
       "type": "InstructionStanza",
-      "text": 63,
+      "text": 60,
       "next": ["end"],
       "stack": true
     },
     "45": {
       "type": "QuestionStanza",
-      "text": 64,
-      "answers": [10, 11],
+      "text": 61,
+      "answers": [11, 12],
       "next": ["46", "47"],
       "stack": false
     },
     "46": {
       "type": "InstructionStanza",
-      "text": 65,
+      "text": 62,
       "next": ["48"],
       "stack": true
     },
     "47": {
       "type": "InstructionStanza",
-      "text": 60,
+      "text": 57,
       "next": ["end"],
       "stack": true
     },
     "48": {
       "type": "InstructionStanza",
-      "text": 66,
+      "text": 63,
       "next": ["end"],
       "stack": true
     },
     "49": {
       "type": "InstructionStanza",
-      "text": 35,
+      "text": 36,
       "next": ["end"],
       "link": 4,
       "stack": true
     },
     "50": {
       "type": "InstructionStanza",
-      "text": 36,
+      "text": 37,
       "next": ["end"],
       "link": 5,
       "stack": true
     },
     "51": {
       "type": "InstructionStanza",
-      "text": 25,
+      "text": 26,
       "next": ["53"],
       "stack": true
     },
     "52": {
       "type": "InstructionStanza",
-      "text": 22,
+      "text": 23,
       "next": ["end"],
       "link": 3,
       "stack": true
     },
     "53": {
       "type": "QuestionStanza",
-      "text": 26,
-      "answers": [27, 28],
+      "text": 27,
+      "answers": [28, 29],
       "next": ["12", "13"],
       "stack": false
     },
     "54": {
       "type": "InstructionStanza",
-      "text": 31,
+      "text": 32,
       "next": ["end"],
+      "stack": true
+    },
+    "55": {
+      "type": "InstructionStanza",
+      "text": 7,
+      "next": ["50"],
       "stack": true
     },
     "start": {
       "type": "QuestionStanza",
       "text": 0,
       "answers": [1, 2, 3, 4, 5, 6],
-      "next": ["1", "49", "50", "20", "34", "45"],
+      "next": ["1", "49", "55", "20", "34", "45"],
       "stack": false
     },
     "end": {
@@ -366,7 +348,8 @@
     }
   },
   "phrases": [
-    ["Ask the customer what is the reason they are unable to log in?", "Please tell us why you're having difficulties signing in"], "Forgotten [glossary:user ID]", "Forgotten password", "Forgotten user ID and password", "Access code or identity verification problems", "Requested [glossary:user ID] by post not received ", "Other", ["Ask the customer which online HMRC service are they trying to access?", "Which online service are you trying to sign in to?"], "Self Assessment ", ["Ask the customer if they have their password?", "Do you have your password?"], "Yes", "No", ["Ask the customer what kind of account they have?", "What type of online account do you have [glossary:Individual], [glossary:agent] or [glossary:org]"], "[glossary:Individual]", "[glossary:agent]", "[glossary:Organisation]", ["Ask the customer if they have their [glossary:UTR] number", "Do you have your [glossary:UTR] number?"],
+    ["Ask the customer what is the reason they are unable to log in?", "Please tell us why you're having difficulties signing in"], "Forgotten [glossary:user ID]", "Forgotten password", "Forgotten user ID and password", "Access code or identity verification problems", "Requested [glossary:user ID] by post not received ", "Other", ["Tell the customer they need to complete the lost password and user ID form", "You will need to complete the lost password and user ID form"],
+    ["Ask the customer which online HMRC service are they trying to access?", "Which online service are you trying to sign in to?"], "Self Assessment ", ["Ask the customer if they have their password?", "Do you have your password?"], "Yes", "No", ["Ask the customer what kind of account they have?", "What type of online account do you have [glossary:Individual], [glossary:agent] or [glossary:org]"], "[glossary:Individual]", "[glossary:Agent]", "[glossary:Organisation]", ["Ask the customer if they have their [glossary:UTR] number", "Do you have your [glossary:UTR] number?"],
     ["Tell the customer if they have their UTR we are able to re-issue their user ID online -we will send the User ID to the email address we hold on their Self Assessment account", "If you have your UTR number please tell us how you want us to re-issue your User ID\n- email - we'll send your user ID to the address on your Self Assessment account\n- post - we'll send your user ID within 7 days to the address on your Self Assessment account"],
     ["Tell the customer if they have their UTR we are able to re-issue their user ID by post - we will send the User ID within seven days to the address we hold on their Self Assessment account", ""],
     ["Tell the customer if they do not have their UTR or they have changed their email or postal address we need to transfer them to an advisor.", "If you don’t have your UTR number, or you've changed your email or post address you'll need to speak to an adviser. Shall I transfer you to an adviser?\n- Yes\n- No"],
@@ -381,13 +364,9 @@
     ["Tell the customer if they do not have the UTR number ", "Because you don't have your UTR number you'll need to speak to an adviser. Shall I transfer you to an adviser? \n- Yes\n- No"],
     ["Tell the customer they will need to contact us", "You'll need to speak to an adviser. Shall I transfer you to an adviser? \n- Yes\n- No"],
     ["Tell the customer we can transfer them to an advisor (OSH)", "You'll need to speak to an adviser. Shall I transfer you to an adviser? \n- Yes\n- No"], "Lost password", "Lost password and user ID", ["Ask the customer if they have received an access code?", "Did you receive an access code?"],
-    ["Ask the customer what is the issue they are having", "Please select one of the following to tell us more about your problem  \n- error message received after submitting the access code\n- difficulties with the identity verification\n- neither of these"], "Error message after entering the access code", "Problem with ID verification process", ["Tell the customer to select 'get help with this page' on the page that is displaying the error", "If you select the 'get help with this page' link on the page where you were having difficulties, you'll be able to report the problem. "],
-    ["Tell the customer they will hear back in 48 hours", "It can take us up to 48 hours to respond."],
-    ["Ask the customer if they have successfully entered their NI number", "Did you enter your National Insurance number correctly?"],
-    ["Ask the customer if they have successfully entered their name", "Did you enter your name correctly?"],
-    ["Ask the customer if they have successfully entered their date of birth", "Did you enter your date of birth correctly?"],
-    ["Ask the customer if they have successfully progressed to the next stage", "Did you get to the next screen after you'd entered your personal details?"], "Has the customer be able to enter their details and progressed to the next stage", ["Tell the customer we will need to check the details we hold", "We need to check the details we hold, shall I transfer you to an adviser? [taxes] \n- yes \n- no"],
-    ["Tell the customer we can transfer them to an advisor (taxes)", ""],
+    ["Ask the customer what is the issue they are having", "Please select one of the following to tell us more about your problem"], "Error message after submitting the access code", "Difficulties with the identity verification", ["Tell the customer to select 'get help with this page' on the page that is displaying the error", "If you select the 'get help with this page' link on the page where you were having difficulties, you'll be able to report the problem. "],
+    ["Tell the customer they will hear back in 48 hours", "It can take us up to 48 hours to respond."], "Have you been able to enter your National Insurance number, name and date of birth and progress to the next stage", ["Tell the customer we will need to check the details we hold", "We need to check the details we hold, please speak to a taxes adviser via [link:webchat:https://online.hmrc.gov.uk/webchatprod/assistant/bot/Ruth?ask=trewq]"],
+    ["Tell the customer we can transfer them to an advisor (taxes)", "You will need to speak to a taxes adviser via [link:webchat:https://online.hmrc.gov.uk/webchatprod/assistant/bot/Ruth?ask=trewq]"],
     ["Ask the customer if they have changed their phone number?", "Have you changed your phone number?\n- Yes \n- No"],
     ["Tell the customer they can now update their phone number online", "If you've changed your phone number you can amend this by selecting the link 'I don't have access to that phone' . You'll find the link under the access code box. "],
     ["Tell the customer click the link under the access code box 'I don't have access to that phone'", ""],
