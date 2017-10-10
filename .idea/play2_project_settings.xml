@@ -7,7 +7,7 @@
           <value>
             <ProjectSettingsEntry>
               <option name="sourceDir" value="C:\Projects\stanza-server\app" />
-              <option name="confDir" value="C:\Projects\stanza-server\app" />
+              <option name="confDir" value="$PROJECT_DIR$/app" />
               <option name="templateImports">
                 <list>
                   <option value="_root_.play.twirl.api.TwirlFeatureImports._" />
@@ -30,7 +30,7 @@
                   <option value="controllers.Assets.Asset" />
                 </list>
               </option>
-              <option name="uri" value="/C:/Projects/stanza-server" />
+              <option name="uri" value="$PROJECT_DIR$" />
             </ProjectSettingsEntry>
           </value>
         </entry>

@@ -71,7 +71,7 @@ class StanzaController @Inject()(cc: ControllerComponents, environment: Environm
   def getLink(processId: String, idx: Int) = Action {
     getProcess(processId) match {
       case None => NotFound(Json.obj("error" -> "Process not found")).as("application/json")
-      case Some(process) => Ok((process \ "meta" \ "links" \ idx).getOrElse(Json.parse("")))
+      case Some(process) => Ok((process \ "links" \ idx).getOrElse(Json.parse("")))
     }
   }
 
